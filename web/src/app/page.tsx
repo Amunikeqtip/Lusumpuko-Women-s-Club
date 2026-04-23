@@ -383,7 +383,7 @@ export default function Home() {
         <SectionLabel>Our Cultural Vision</SectionLabel>
         <blockquote className="mx-auto mt-8 max-w-4xl font-[family-name:var(--font-display)] text-4xl leading-tight tracking-[-0.03em] text-[#241711] sm:text-5xl lg:text-6xl">
           &quot;Food is the most intimate way to share a history. Through
-          Lusumpuko Women's Club, we are not just serving meals, we are preserving the
+          Lusumpuko Women&apos;s Club, we are not just serving meals, we are preserving the
           echoes of our ancestors for the generations of tomorrow.&quot;
         </blockquote>
         <div className="mx-auto mt-10 flex w-fit flex-col items-center">

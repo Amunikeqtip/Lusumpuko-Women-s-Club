@@ -1,36 +1,81 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Lusumpuko Women's Club
 
-## Getting Started
+A modern Next.js website for Lusumpuko Women's Club, built as a small workspace app with a polished heritage-inspired landing experience.
 
-First, run the development server:
+## Tech Stack
+
+- Next.js 16.2.4
+- React 19.2.4
+- React DOM 19.2.4
+- TypeScript 5
+- Tailwind CSS 4
+- ESLint 9
+- npm workspaces
+
+## Prerequisites
+
+- Node.js 20 or newer
+- npm 10 or newer
+
+## Install
+
+From the repository root:
+
+```bash
+npm install
+```
+
+This installs the root workspace dependencies and keeps the `web` app in sync with the lockfile.
+
+## Start The App
+
+Development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Then open:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+http://localhost:3000
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Production build:
 
-## Learn More
+```bash
+npm run build
+```
 
-To learn more about Next.js, take a look at the following resources:
+Production server:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+npm run start
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Lint the app:
 
-## Deploy on Vercel
+```bash
+npm run lint
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Available Scripts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+The root `package.json` proxies to the `web` workspace:
+
+- `npm run dev` starts the Next.js dev server
+- `npm run build` creates a production build
+- `npm run start` runs the production server
+- `npm run lint` runs ESLint
+
+## Project Structure
+
+- `web/src/app` - App Router pages and layout
+- `web/public` - Static assets
+- `web/next.config.ts` - Next.js configuration
+- `web/src/app/globals.css` - Global styling and Tailwind theme setup
+
+## Notes
+
+- This app uses the Next.js App Router.
+- Remote imagery is used in the page backgrounds, so the site is visual-first and image-heavy by design.

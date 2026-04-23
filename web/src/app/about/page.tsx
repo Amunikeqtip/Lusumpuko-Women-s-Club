@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const timelineItems = [
   {
@@ -97,36 +98,36 @@ export default function AboutPage() {
           </div>
 
           <nav className="hidden items-center gap-2 rounded-full border border-white/30 bg-white/18 p-1.5 text-[0.9rem] font-medium text-[#58473d] shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] lg:flex">
-            <a
+            <Link
               href="/"
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
               Home
-            </a>
-            <a
+            </Link>
+            <Link
               href="/about"
               className="rounded-full bg-[#d75a1f] px-4 py-2 text-white shadow-[0_10px_20px_rgba(215,90,31,0.2)] transition hover:bg-[#c64d14]"
             >
               About
             </a>
             <a
-              href="/menu"
+              href="/#menu"
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
               Menu
-            </a>
-            <a
+            </Link>
+            <Link
               href="/roots"
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
               Roots
             </a>
             <a
-              href="/stories"
+              href="/#footer"
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
               Explore
-            </a>
+            </Link>
           </nav>
 
           <div className="flex flex-1 items-center justify-end gap-3 md:flex-none">
@@ -135,11 +136,11 @@ export default function AboutPage() {
               <span>Search dishes...</span>
             </div>
             <a
-              href="/contact"
+              href="/#order"
               className="rounded-full bg-[#d75a1f] px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813]"
             >
               Order Online
-            </a>
+            </Link>
           </div>
         </div>
       </header>
@@ -202,12 +203,12 @@ export default function AboutPage() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-4">
-              <a
+              <Link
                 href="/#menu"
                 className="rounded-full bg-[#d75a1f] px-6 py-3 text-sm font-semibold text-white shadow-[0_14px_28px_rgba(215,90,31,0.24)] transition hover:bg-[#bf4a13]"
               >
                 Explore the Menu
-              </a>
+              </Link>
               <a
                 href="#regional"
                 className="rounded-full border border-[#ead9ca] bg-white px-6 py-3 text-sm font-semibold text-[#3f2f27] transition hover:bg-[#fff4ec]"
@@ -401,17 +402,17 @@ export default function AboutPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a
-              href="/contact"
+              href="/#order"
               className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#d7541b] transition hover:bg-[#fff0e6]"
             >
               Order Online Now
-            </a>
-            <a
+            </Link>
+            <Link
               href="/roots"
               className="rounded-full border border-white/35 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/16"
             >
               Try the Heritage
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -485,9 +486,9 @@ export default function AboutPage() {
           <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-[#eadfd5] pt-6 text-xs uppercase tracking-[0.18em] text-[#9f8b7c]">
             <p>© 2026 Lusumpuko Pala. All rights reserved.</p>
             <div className="flex gap-6">
-              <a href="/#footer">Privacy Policy</a>
-              <a href="/#footer">Terms of Service</a>
-              <a href="/#footer">Sitemap</a>
+              <Link href="/#footer">Privacy Policy</Link>
+              <Link href="/#footer">Terms of Service</Link>
+              <Link href="/#footer">Sitemap</Link>
             </div>
           </div>
         </div>

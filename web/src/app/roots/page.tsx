@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const pillars = [
   { label: "Ancient Roots", value: "Tonga" },
@@ -86,36 +87,48 @@ export default function RootsPage() {
           </div>
 
           <nav className="hidden items-center gap-2 rounded-full border border-white/30 bg-white/18 p-1.5 text-[0.9rem] font-medium text-[#58473d] shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] lg:flex">
-            <a
+            <Link
               href="/"
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
               Home
-            </a>
-            <a
+            </Link>
+            <Link
               href="/about"
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
               About
+<<<<<<< HEAD
+            </Link>
+            <Link
+              href="/#menu"
+=======
             </a>
             <a
               href="/menu"
+>>>>>>> 679be4f23215a0f31fee13e7a73afa844abe83d4
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
               Menu
-            </a>
-            <a
+            </Link>
+            <Link
               href="/roots"
               className="rounded-full bg-[#d75a1f] px-4 py-2 text-white shadow-[0_10px_20px_rgba(215,90,31,0.2)] transition hover:bg-[#c64d14]"
             >
               Roots
+<<<<<<< HEAD
+            </Link>
+            <Link
+              href="/#footer"
+=======
             </a>
             <a
               href="/stories"
+>>>>>>> 679be4f23215a0f31fee13e7a73afa844abe83d4
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
               Explore
-            </a>
+            </Link>
           </nav>
 
           <div className="flex flex-1 items-center justify-end gap-3 md:flex-none">
@@ -123,12 +136,17 @@ export default function RootsPage() {
               <span className="text-base text-[#d05a1e]">⌕</span>
               <span>Search dishes...</span>
             </div>
+<<<<<<< HEAD
+            <Link
+              href="/#order"
+=======
             <a
               href="/contact"
+>>>>>>> 679be4f23215a0f31fee13e7a73afa844abe83d4
               className="rounded-full bg-[#d75a1f] px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813]"
             >
               Order Online
-            </a>
+            </Link>
           </div>
         </div>
       </header>
@@ -262,18 +280,23 @@ export default function RootsPage() {
             varieties from all three cultural pillars.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
+<<<<<<< HEAD
+            <Link
+              href="/#menu"
+=======
             <a
               href="/menu"
+>>>>>>> 679be4f23215a0f31fee13e7a73afa844abe83d4
               className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#d7541b] transition hover:bg-[#fff0e6]"
             >
               Explore the Menu
-            </a>
-            <a
+            </Link>
+            <Link
               href="/about"
               className="rounded-full border border-white/35 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/16"
             >
               Learn More History
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -347,9 +370,9 @@ export default function RootsPage() {
           <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-[#eadfd5] pt-6 text-xs uppercase tracking-[0.18em] text-[#9f8b7c]">
             <p>© 2026 Lusumpuko Pala. All rights reserved.</p>
             <div className="flex gap-6">
-              <a href="/#footer">Privacy Policy</a>
-              <a href="/#footer">Terms of Service</a>
-              <a href="/#footer">Sitemap</a>
+              <Link href="/#footer">Privacy Policy</Link>
+              <Link href="/#footer">Terms of Service</Link>
+              <Link href="/#footer">Sitemap</Link>
             </div>
           </div>
         </div>
