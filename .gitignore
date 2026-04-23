@@ -1,0 +1,14 @@
+# Root ignore rules for the monorepo / nested app.
+node_modules/
+.next/
+out/
+coverage/
+dist/
+
+# Logs and environment files
+*.log
+.env*
+.vercel/
+
+# TypeScript
+*.tsbuildinfo
