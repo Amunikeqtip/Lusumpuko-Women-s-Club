@@ -282,7 +282,7 @@ export default function Home() {
               Menu
             </a>
             <a
-              href="#roots"
+              href="/roots"
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
               Roots

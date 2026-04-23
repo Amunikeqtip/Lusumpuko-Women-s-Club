@@ -116,7 +116,7 @@ export default function AboutPage() {
               Menu
             </a>
             <a
-              href="/#discover"
+              href="/roots"
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
               Roots
@@ -302,7 +302,7 @@ export default function AboutPage() {
             </p>
           </div>
           <a
-            href="/#discover"
+            href="/roots"
             className="rounded-full border border-[#ead9ca] bg-white px-5 py-2 text-sm font-semibold text-[#3f2f27] transition hover:bg-[#fff4ec]"
           >
             View All Roots
@@ -331,7 +331,7 @@ export default function AboutPage() {
                   {region.description}
                 </p>
                 <a
-                  href="/#discover"
+                  href="/roots"
                   className="mt-4 inline-block text-sm font-semibold text-[#d75a1f]"
                 >
                   {region.link} →
@@ -407,7 +407,7 @@ export default function AboutPage() {
               Order Online Now
             </a>
             <a
-              href="/#discover"
+              href="/roots"
               className="rounded-full border border-white/35 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/16"
             >
               Try the Heritage
