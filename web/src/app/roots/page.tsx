@@ -99,7 +99,7 @@ export default function RootsPage() {
               About
             </a>
             <a
-              href="/#menu"
+              href="/menu"
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
               Menu
@@ -111,7 +111,7 @@ export default function RootsPage() {
               Roots
             </a>
             <a
-              href="/#footer"
+              href="/stories"
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
               Explore
@@ -124,7 +124,7 @@ export default function RootsPage() {
               <span>Search dishes...</span>
             </div>
             <a
-              href="/#order"
+              href="/contact"
               className="rounded-full bg-[#d75a1f] px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813]"
             >
               Order Online
@@ -148,7 +148,11 @@ export default function RootsPage() {
 
         <div className="mt-10 flex flex-wrap items-center justify-center gap-8">
           {pillars.map((pillar) => (
-            <div key={pillar.value} className="text-center">
+            <a
+              key={pillar.value}
+              href={`/roots/${pillar.value.toLowerCase()}`}
+              className="text-center transition hover:-translate-y-1"
+            >
               <p className="text-[#d75a1f]">◧</p>
               <p className="mt-2 text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-[#9a8677]">
                 {pillar.label}
@@ -156,7 +160,7 @@ export default function RootsPage() {
               <p className="mt-1 font-[family-name:var(--font-display)] text-xl text-[#241711]">
                 {pillar.value}
               </p>
-            </div>
+            </a>
           ))}
         </div>
       </section>
@@ -211,6 +215,12 @@ export default function RootsPage() {
                     ceremonies, ingredients, and serving traditions that define
                     this cultural lineage.
                   </p>
+                  <a
+                    href={`/roots/${section.title.toLowerCase().includes("tonga") ? "tonga" : section.title.toLowerCase().includes("ndebele") ? "ndebele" : "shona"}`}
+                    className="mt-4 inline-block text-sm font-semibold text-[#d75a1f]"
+                  >
+                    Read full heritage story →
+                  </a>
                 </div>
               </div>
             </article>
@@ -253,7 +263,7 @@ export default function RootsPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a
-              href="/#menu"
+              href="/menu"
               className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#d7541b] transition hover:bg-[#fff0e6]"
             >
               Explore the Menu

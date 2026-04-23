@@ -110,7 +110,7 @@ export default function AboutPage() {
               About
             </a>
             <a
-              href="/#menu"
+              href="/menu"
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
               Menu
@@ -122,7 +122,7 @@ export default function AboutPage() {
               Roots
             </a>
             <a
-              href="/#footer"
+              href="/stories"
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
               Explore
@@ -135,7 +135,7 @@ export default function AboutPage() {
               <span>Search dishes...</span>
             </div>
             <a
-              href="/#order"
+              href="/contact"
               className="rounded-full bg-[#d75a1f] px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813]"
             >
               Order Online
@@ -401,7 +401,7 @@ export default function AboutPage() {
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <a
-              href="/#order"
+              href="/contact"
               className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#d7541b] transition hover:bg-[#fff0e6]"
             >
               Order Online Now

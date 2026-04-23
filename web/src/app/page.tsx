@@ -276,7 +276,7 @@ export default function Home() {
               About
             </a>
             <a
-              href="#menu"
+              href="/menu"
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
               Menu
@@ -288,7 +288,7 @@ export default function Home() {
               Roots
             </a>
             <a
-              href="#explore"
+              href="/stories"
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
               Explore
@@ -324,7 +324,7 @@ export default function Home() {
               </button>
             </form>
             <a
-              href="#order"
+              href="/contact"
               className="rounded-full bg-[#d75a1f] px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813]"
             >
               Order Online
@@ -359,7 +359,7 @@ export default function Home() {
               </p>
               <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
                 <a
-                  href="#order"
+                  href="/contact"
                   className="rounded-full bg-[#e15d1f] px-8 py-4 text-sm font-semibold text-white shadow-[0_16px_30px_rgba(225,93,31,0.32)] transition hover:bg-[#c74b11]"
                 >
                   Order Online Now
