@@ -140,7 +140,7 @@ export default function AboutPage() {
               className="rounded-full bg-[#d75a1f] px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813]"
             >
               Order Online
-            </Link>
+            </a>
           </div>
         </div>
       </header>
@@ -175,7 +175,7 @@ export default function AboutPage() {
             <p className="inline-flex rounded-full border border-[#f1d1c2] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-[#cb5c22]">
               Our Origins
             </p>
-            <h1 className="mt-6 font-[family-name:var(--font-display)] text-5xl leading-[0.95] tracking-[-0.03em] text-[#241711] sm:text-6xl">
+            <h1 className="mt-6 font-[family-name:var(--font-display)] text-4xl leading-[0.95] tracking-[-0.03em] text-[#241711] sm:text-6xl">
               The Grain of a Thousand Stories
             </h1>
             <p className="mt-6 max-w-xl text-base leading-8 text-[#6e6055]">
@@ -270,7 +270,7 @@ export default function AboutPage() {
       <section className="bg-white py-20">
         <div className="mx-auto max-w-5xl px-6 text-center sm:px-8">
           <p className="text-6xl leading-none text-[#f0d5c6]">”</p>
-          <blockquote className="mx-auto max-w-4xl font-[family-name:var(--font-display)] text-3xl leading-tight tracking-[-0.02em] text-[#241711] sm:text-5xl">
+          <blockquote className="mx-auto max-w-4xl font-[family-name:var(--font-display)] text-2xl leading-tight tracking-[-0.02em] text-[#241711] sm:text-5xl">
             Pala is the thread that weaves our generations together. It is the
             first meal a child tastes and the last one elders remember with
             longing.
@@ -294,7 +294,7 @@ export default function AboutPage() {
       <section id="regional" className="mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:px-12">
         <div className="flex flex-wrap items-end justify-between gap-4">
           <div>
-            <h2 className="font-[family-name:var(--font-display)] text-4xl text-[#241711] sm:text-5xl">
+          <h2 className="font-[family-name:var(--font-display)] text-3xl text-[#241711] sm:text-5xl">
               Regional Expressions
             </h2>
             <p className="mt-3 max-w-2xl text-sm leading-7 text-[#75675c]">
@@ -392,7 +392,7 @@ export default function AboutPage() {
 
       <section className="mt-10 bg-[#d7541b] py-16 text-white">
         <div className="mx-auto max-w-4xl px-6 text-center sm:px-8">
-          <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl">
+          <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-5xl">
             Ready to Taste the History?
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/88">
@@ -406,7 +406,7 @@ export default function AboutPage() {
               className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#d7541b] transition hover:bg-[#fff0e6]"
             >
               Order Online Now
-            </Link>
+            </a>
             <Link
               href="/roots"
               className="rounded-full border border-white/35 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/16"

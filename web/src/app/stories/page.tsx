@@ -62,14 +62,14 @@ export default function StoriesPage() {
         }}
       >
         <div className="mx-auto max-w-5xl px-6 py-24 text-center text-white sm:px-8">
-          <h1 className="font-[family-name:var(--font-display)] text-5xl leading-[0.95] sm:text-6xl">Our Legacy, Your<br />Stories</h1>
+          <h1 className="font-[family-name:var(--font-display)] text-4xl leading-[0.95] sm:text-6xl">Our Legacy, Your<br />Stories</h1>
           <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/88">Discover how Lusumpuko Pala is more than just a meal. It&apos;s a shared heritage passed down through generations.</p>
         </div>
       </section>
 
       <section className="mx-auto max-w-6xl px-6 py-20 sm:px-8 lg:px-12">
         <div className="text-center">
-          <h2 className="font-[family-name:var(--font-display)] text-4xl text-[#241711] sm:text-5xl">Community Voices</h2>
+          <h2 className="font-[family-name:var(--font-display)] text-3xl text-[#241711] sm:text-5xl">Community Voices</h2>
           <p className="mt-4 text-sm font-semibold uppercase tracking-[0.24em] text-[#d75a1f]">4.9 / 5.0 Rating</p>
         </div>
         <div className="mt-10 grid gap-6 lg:grid-cols-3">

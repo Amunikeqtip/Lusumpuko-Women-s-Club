@@ -347,7 +347,7 @@ export default function Home() {
               <span className="inline-flex rounded-full border border-white/35 bg-white/12 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white/90 backdrop-blur">
                 Discover the taste of heritage
               </span>
-              <h1 className="mt-8 font-[family-name:var(--font-display)] text-5xl leading-[0.95] tracking-[-0.03em] sm:text-6xl lg:text-8xl">
+              <h1 className="mt-8 font-[family-name:var(--font-display)] text-4xl leading-[0.95] tracking-[-0.03em] sm:text-6xl lg:text-8xl">
                 Experience the Soul
                 <br />
                 of Tradition
@@ -381,7 +381,7 @@ export default function Home() {
         className="relative z-0 mx-auto max-w-6xl px-6 py-24 text-center sm:px-8 lg:px-12"
       >
         <SectionLabel>Our Cultural Vision</SectionLabel>
-        <blockquote className="mx-auto mt-8 max-w-4xl font-[family-name:var(--font-display)] text-4xl leading-tight tracking-[-0.03em] text-[#241711] sm:text-5xl lg:text-6xl">
+        <blockquote className="mx-auto mt-8 max-w-4xl font-[family-name:var(--font-display)] text-3xl leading-tight tracking-[-0.03em] text-[#241711] sm:text-5xl lg:text-6xl">
           &quot;Food is the most intimate way to share a history. Through
           Lusumpuko Women&apos;s Club, we are not just serving meals, we are preserving the
           echoes of our ancestors for the generations of tomorrow.&quot;

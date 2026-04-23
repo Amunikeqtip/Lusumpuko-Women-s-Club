@@ -181,7 +181,7 @@ export default function ContactPage() {
           <p className="inline-flex rounded-full border border-[#f0d7c7] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-[#cb5c22]">
             Connect with us
           </p>
-          <h1 className="mt-6 font-[family-name:var(--font-display)] text-5xl leading-[0.95] tracking-[-0.03em] text-[#241711] sm:text-6xl">
+          <h1 className="mt-6 font-[family-name:var(--font-display)] text-4xl leading-[0.95] tracking-[-0.03em] text-[#241711] sm:text-6xl">
             Get in Touch with our
             <br />
             <span className="text-[#d75a1f] italic">Heritage</span>
@@ -284,7 +284,7 @@ export default function ContactPage() {
 
       <section className="mx-auto grid max-w-6xl gap-10 px-6 py-20 sm:px-8 lg:grid-cols-[1.18fr_0.82fr] lg:px-12">
         <div>
-          <h2 className="font-[family-name:var(--font-display)] text-5xl text-[#241711]">
+          <h2 className="font-[family-name:var(--font-display)] text-4xl text-[#241711]">
             Complete Your <span className="text-[#d75a1f] underline">Order</span>
           </h2>
           <p className="mt-4 text-base text-[#73635a]">

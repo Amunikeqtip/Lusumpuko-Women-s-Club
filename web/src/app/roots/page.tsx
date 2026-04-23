@@ -138,7 +138,7 @@ export default function RootsPage() {
         <p className="inline-flex rounded-full border border-[#f1d1c2] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-[#cb5c22]">
           Cultural Foundations
         </p>
-        <h1 className="mt-8 font-[family-name:var(--font-display)] text-5xl leading-[0.92] tracking-[-0.03em] text-[#241711] sm:text-6xl lg:text-7xl">
+        <h1 className="mt-8 font-[family-name:var(--font-display)] text-4xl leading-[0.92] tracking-[-0.03em] text-[#241711] sm:text-6xl lg:text-7xl">
           The Three Pillars of <span className="text-[#d75a1f]">Our Taste</span>
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-[#73655a]">
@@ -254,7 +254,7 @@ export default function RootsPage() {
 
       <section className="bg-[#d7541b] py-18 text-white">
         <div className="mx-auto max-w-4xl px-6 text-center sm:px-8">
-          <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl">
+          <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-5xl">
             Experience the Heritage Today
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/88">

@@ -246,7 +246,7 @@ export default function MenuPage() {
           <p className="inline-flex rounded-full border border-[#f0d3c4] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-[#cb5c22]">
             Our Culinary Catalog
           </p>
-          <h1 className="mt-6 font-[family-name:var(--font-display)] text-5xl leading-[0.95] tracking-[-0.03em] text-[#241711] sm:text-6xl">
+          <h1 className="mt-6 font-[family-name:var(--font-display)] text-4xl leading-[0.95] tracking-[-0.03em] text-[#241711] sm:text-6xl">
             Discover the <span className="text-[#d75a1f]">Art</span> of Pala
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-8 text-[#716158]">

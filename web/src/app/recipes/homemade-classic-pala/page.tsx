@@ -109,7 +109,7 @@ export default function RecipePage() {
             <span className="rounded-full bg-[#d75a1f] px-3 py-1">Traditional Favorite</span>
             <span className="rounded-full bg-white/12 px-3 py-1">Ndebele Style</span>
           </div>
-          <h1 className="mt-6 font-[family-name:var(--font-display)] text-5xl sm:text-6xl">
+          <h1 className="mt-6 font-[family-name:var(--font-display)] text-4xl sm:text-6xl">
             Homemade Classic Pala
           </h1>
           <p className="mt-4 text-sm font-medium text-white/88">
