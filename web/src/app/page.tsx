@@ -1,27 +1,36 @@
 "use client";
 
 import Image from "next/image";
+import { useEffect, useState } from "react";
 
 const discoverCards = [
   {
     title: "Full Menu",
     subtitle: "Explore our rich seasonal selection",
     palette: "from-[#51412d] via-[#7a5c38] to-[#201814]",
+    image:
+      "url('https://commons.wikimedia.org/wiki/Special:FilePath/White%20sadza%2C%20braai%20and%20salads.jpg')",
   },
   {
     title: "Cultural Roots",
     subtitle: "The stories, rituals, and ingredients behind every dish",
     palette: "from-[#223825] via-[#708969] to-[#101c12]",
+    image:
+      "url('https://commons.wikimedia.org/wiki/Special:FilePath/A%20plate%20of%20sadza.jpg')",
   },
   {
     title: "Authentic Recipes",
     subtitle: "Traditional methods from Tonga, Ndebele, and Shona kitchens",
     palette: "from-[#3b3127] via-[#82684a] to-[#1b1511]",
+    image:
+      "url('https://commons.wikimedia.org/wiki/Special:FilePath/Sadza%20and%20Sausage.jpg')",
   },
   {
     title: "Visual Gallery",
     subtitle: "A warm look into our table, plating, and celebrations",
     palette: "from-[#62411d] via-[#b17d35] to-[#1f1208]",
+    image:
+      "url('https://commons.wikimedia.org/wiki/Special:FilePath/Zimbabwe%20Traditionalfood.jpg')",
   },
 ];
 
@@ -46,14 +55,73 @@ const testimonials = [
   },
 ];
 
-const gramTiles = [
-  "from-[#3d2d1d] via-[#795431] to-[#17110c]",
-  "from-[#37562b] via-[#9ac15e] to-[#152214]",
-  "from-[#783b20] via-[#dc8d48] to-[#25140d]",
-  "from-[#5a2f22] via-[#a35a3c] to-[#1d100a]",
-  "from-[#825322] via-[#db9f46] to-[#25150a]",
-  "from-[#81464d] via-[#efb5c5] to-[#291219]",
+const dishCatalog = [
+  {
+    name: "Traditional Ndebele Pala",
+    description:
+      "Slow-cooked heritage grains, tender protein, seasonal greens, and our signature chili reduction.",
+    category: "Signature Plate",
+    price: "$12.00",
+  },
+  {
+    name: "White Sadza with Braai",
+    description:
+      "A hearty Zimbabwean staple served with braai and bright garden salads.",
+    category: "Main Dish",
+    price: "$10.50",
+  },
+  {
+    name: "Stewed Kapenta and Sadza",
+    description:
+      "A comforting plate of stewed kapenta, tomato gravy, and hand-finished sadza.",
+    category: "Traditional Favorite",
+    price: "$11.00",
+  },
+  {
+    name: "Sadza and Beans",
+    description:
+      "Creamy slow-simmered beans paired with soft sadza and house spices.",
+    category: "Vegetarian",
+    price: "$8.50",
+  },
+  {
+    name: "Peanut Leaf Relish Bowl",
+    description:
+      "Leafy greens cooked in a rich peanut sauce, finished with warm traditional seasoning.",
+    category: "Sides & Bowls",
+    price: "$7.50",
+  },
+  {
+    name: "Shona Heritage Feast",
+    description:
+      "A celebratory selection of sadza, grilled meats, stews, and seasonal vegetables.",
+    category: "Family Platter",
+    price: "$23.00",
+  },
 ];
+
+const gramTiles = [
+  "url('https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20meal.jpg')",
+  "url('https://commons.wikimedia.org/wiki/Special:FilePath/Zimbabwe%20Traditionalfood.jpg')",
+  "url('https://commons.wikimedia.org/wiki/Special:FilePath/A%20plate%20of%20sadza.jpg')",
+  "url('https://commons.wikimedia.org/wiki/Special:FilePath/Stewed%20Capenta%20and%20Sadza%28as%20it%20is%20known%20in%20Zimbabwe%29%20dish.JPG')",
+  "url('https://commons.wikimedia.org/wiki/Special:FilePath/White%20sadza%2C%20braai%20and%20salads.jpg')",
+  "url('https://commons.wikimedia.org/wiki/Special:FilePath/Sadza%20and%20Beans.jpg')",
+];
+
+const heroBackgroundStyle = {
+  backgroundImage:
+    "url('https://upload.wikimedia.org/wikipedia/commons/b/b5/Traditional_meal.jpg')",
+  backgroundPosition: "center center",
+  backgroundSize: "cover",
+};
+
+const bestsellerImageStyle = {
+  backgroundImage:
+    "url('https://commons.wikimedia.org/wiki/Special:FilePath/Zimbabwe%20Traditionalfood.jpg')",
+  backgroundPosition: "center center",
+  backgroundSize: "cover",
+};
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
@@ -64,59 +132,213 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 }
 
 export default function Home() {
+  const [searchQuery, setSearchQuery] = useState("");
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
+
+  const normalizedQuery = searchQuery.trim().toLowerCase();
+  const searchResults = normalizedQuery
+    ? dishCatalog.filter((dish) =>
+        `${dish.name} ${dish.description} ${dish.category}`
+          .toLowerCase()
+          .includes(normalizedQuery),
+      )
+    : [];
+
+  useEffect(() => {
+    if (!isSearchOpen) {
+      return;
+    }
+
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setIsSearchOpen(false);
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [isSearchOpen]);
+
   return (
     <main className="relative isolate bg-[#f7f0e8] text-[#2f241d]">
+      {isSearchOpen ? (
+        <div className="fixed inset-0 z-[1200] flex items-start justify-center bg-[rgba(27,17,11,0.55)] px-4 pb-6 pt-28 backdrop-blur-sm sm:px-6">
+          <div className="w-full max-w-3xl overflow-hidden rounded-[2rem] border border-white/35 bg-[#fff8f2] shadow-[0_30px_90px_rgba(33,20,11,0.28)]">
+            <div className="flex items-center justify-between border-b border-[#efdfd1] px-6 py-5">
+              <div>
+                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#af8d79]">
+                  Search Results
+                </p>
+                <h2 className="mt-1 font-[family-name:var(--font-display)] text-3xl text-[#2a1c15]">
+                  {normalizedQuery
+                    ? `Results for "${searchQuery.trim()}"`
+                    : "Find a dish"}
+                </h2>
+              </div>
+              <button
+                type="button"
+                onClick={() => setIsSearchOpen(false)}
+                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#ead7c7] text-[#7d6657] transition hover:bg-white"
+                aria-label="Close search results"
+              >
+                ✕
+              </button>
+            </div>
+
+            <div className="max-h-[65vh] overflow-y-auto px-6 py-6">
+              {normalizedQuery ? (
+                searchResults.length > 0 ? (
+                  <div className="grid gap-4">
+                    {searchResults.map((dish) => (
+                      <article
+                        key={dish.name}
+                        className="rounded-[1.5rem] border border-[#efdfd1] bg-white px-5 py-5 shadow-[0_14px_35px_rgba(68,35,12,0.06)]"
+                      >
+                        <div className="flex flex-wrap items-start justify-between gap-4">
+                          <div className="max-w-2xl">
+                            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#cc5f28]">
+                              {dish.category}
+                            </p>
+                            <h3 className="mt-2 font-[family-name:var(--font-display)] text-2xl text-[#241711]">
+                              {dish.name}
+                            </h3>
+                            <p className="mt-3 text-sm leading-7 text-[#66564b]">
+                              {dish.description}
+                            </p>
+                          </div>
+                          <p className="font-[family-name:var(--font-display)] text-2xl text-[#d75a1f]">
+                            {dish.price}
+                          </p>
+                        </div>
+                      </article>
+                    ))}
+                  </div>
+                ) : (
+                  <div className="rounded-[1.5rem] border border-dashed border-[#e7d5c6] bg-white/70 px-6 py-10 text-center">
+                    <p className="font-[family-name:var(--font-display)] text-3xl text-[#2a1b14]">
+                      No dishes found
+                    </p>
+                    <p className="mt-3 text-sm leading-7 text-[#76665a]">
+                      Try searching for terms like sadza, pala, beans, braai,
+                      or feast.
+                    </p>
+                  </div>
+                )
+              ) : (
+                <div className="rounded-[1.5rem] border border-dashed border-[#e7d5c6] bg-white/70 px-6 py-10 text-center">
+                  <p className="font-[family-name:var(--font-display)] text-3xl text-[#2a1b14]">
+                    Start typing a dish
+                  </p>
+                  <p className="mt-3 text-sm leading-7 text-[#76665a]">
+                    Search the menu for traditional plates, sides, and family
+                    platters.
+                  </p>
+                </div>
+              )}
+            </div>
+          </div>
+        </div>
+      ) : null}
+
+      <header className="fixed left-1/2 top-4 z-[999] w-[calc(100%-2rem)] max-w-[1320px] -translate-x-1/2 rounded-full border border-white/35 bg-[linear-gradient(135deg,rgba(255,250,244,0.62),rgba(255,244,236,0.28))] px-4 py-3 shadow-[0_18px_55px_rgba(53,32,14,0.18)] backdrop-blur-xl supports-[backdrop-filter]:bg-[linear-gradient(135deg,rgba(255,250,244,0.52),rgba(255,244,236,0.18))] md:w-[calc(100%-3rem)] md:px-6 lg:w-[calc(100%-5rem)]">
+        <div className="flex flex-wrap items-center justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <Image
+              src="/planeterra.png"
+              alt="Planeterra logo"
+              width={220}
+              height={76}
+              priority
+              className="h-11 w-auto object-contain md:h-12"
+            />
+            <div className="hidden h-10 w-px bg-[#ead9ca] sm:block" />
+            <div className="hidden sm:block">
+              <p className="font-[family-name:var(--font-display)] text-lg leading-none text-[#c74f19] md:text-xl">
+                Lusumpuko Women&apos;s Club
+              </p>
+              <p className="mt-1 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#8d7869]">
+                Heritage Dining Experience
+              </p>
+            </div>
+          </div>
+
+          <nav className="hidden items-center gap-2 rounded-full border border-white/30 bg-white/18 p-1.5 text-[0.9rem] font-medium text-[#58473d] shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] lg:flex">
+            <a
+              href="#home"
+              className="rounded-full bg-[#d75a1f] px-4 py-2 text-white shadow-[0_10px_20px_rgba(215,90,31,0.2)] transition hover:bg-[#c64d14]"
+            >
+              Home
+            </a>
+            <a
+              href="/about"
+              className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
+            >
+              About
+            </a>
+            <a
+              href="#menu"
+              className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
+            >
+              Menu
+            </a>
+            <a
+              href="#roots"
+              className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
+            >
+              Roots
+            </a>
+            <a
+              href="#explore"
+              className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
+            >
+              Explore
+            </a>
+          </nav>
+
+          <div className="flex flex-1 items-center justify-end gap-3 md:flex-none">
+            <form
+              onSubmit={(event) => {
+                event.preventDefault();
+                setIsSearchOpen(true);
+              }}
+              className="hidden min-w-[270px] items-center gap-2 rounded-full border border-[#e8ddd0] bg-white/82 px-3 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] md:flex"
+            >
+              <span className="pl-1 text-base text-[#d05a1e]">⌕</span>
+              <input
+                type="search"
+                value={searchQuery}
+                onFocus={() => setIsSearchOpen(true)}
+                onChange={(event) => {
+                  setSearchQuery(event.target.value);
+                  setIsSearchOpen(true);
+                }}
+                placeholder="Search dishes..."
+                className="w-full bg-transparent text-sm text-[#5f5045] outline-none placeholder:text-[#9a887a]"
+                aria-label="Search dishes"
+              />
+              <button
+                type="submit"
+                className="rounded-full bg-[#f8eee5] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#c45a24] transition hover:bg-[#f3e1d2]"
+              >
+                Find
+              </button>
+            </form>
+            <a
+              href="#order"
+              className="rounded-full bg-[#d75a1f] px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813]"
+            >
+              Order Online
+            </a>
+          </div>
+        </div>
+      </header>
+
       <section className="relative isolate overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(231,168,82,0.78),transparent_20%),radial-gradient(circle_at_58%_38%,rgba(111,173,104,0.88),transparent_28%),radial-gradient(circle_at_44%_40%,rgba(134,34,38,0.58),transparent_16%),radial-gradient(circle_at_62%_58%,rgba(110,51,143,0.38),transparent_12%),radial-gradient(circle_at_36%_53%,rgba(198,230,164,0.8),transparent_16%),radial-gradient(circle_at_54%_48%,rgba(250,244,233,0.55),transparent_21%),linear-gradient(rgba(31,21,12,0.5),rgba(31,21,12,0.6)),repeating-linear-gradient(90deg,#6a5646_0px,#6a5646_3px,#5d4939_3px,#5d4939_12px)]" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,transparent_32%,rgba(12,7,4,0.42)_72%,rgba(12,7,4,0.78)_100%)]" />
+        <div className="absolute inset-0" style={heroBackgroundStyle} />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,13,8,0.4)_0%,rgba(23,13,8,0.48)_24%,rgba(23,13,8,0.62)_100%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(231,168,82,0.18),transparent_24%),radial-gradient(circle_at_58%_38%,rgba(111,173,104,0.16),transparent_28%),radial-gradient(circle_at_center,transparent_0%,transparent_38%,rgba(12,7,4,0.32)_72%,rgba(12,7,4,0.68)_100%)]" />
 
         <div className="relative mx-auto flex min-h-screen w-full max-w-[1400px] flex-col px-4 pb-16 pt-4 sm:px-6 lg:px-10">
-          <header className="fixed left-1/2 top-4 z-[120] isolate w-[calc(100%-2rem)] max-w-[1320px] -translate-x-1/2 rounded-full border border-white/55 bg-[#fffaf4]/95 px-4 py-3 shadow-[0_16px_50px_rgba(53,32,14,0.12)] backdrop-blur md:w-[calc(100%-3rem)] md:px-6 lg:w-[calc(100%-5rem)]">
-            <div className="flex flex-wrap items-center justify-between gap-4">
-              <div className="flex items-center">
-                <Image
-                  src="/planeterra.png"
-                  alt="Planeterra logo"
-                  width={220}
-                  height={76}
-                  priority
-                  className="h-11 w-auto object-contain md:h-12"
-                />
-              </div>
-
-              <nav className="hidden items-center gap-6 text-sm text-[#6b5a4a] lg:flex">
-                <a href="#home" className="text-[#d05a1e]">
-                  Home
-                </a>
-                <a href="#about" className="transition hover:text-[#d05a1e]">
-                  About
-                </a>
-                <a href="#menu" className="transition hover:text-[#d05a1e]">
-                  Menu
-                </a>
-                <a href="#roots" className="transition hover:text-[#d05a1e]">
-                  Roots
-                </a>
-                <a href="#explore" className="transition hover:text-[#d05a1e]">
-                  Explore
-                </a>
-              </nav>
-
-              <div className="flex flex-1 items-center justify-end gap-3 md:flex-none">
-                <div className="hidden min-w-[220px] items-center gap-2 rounded-full border border-[#e8ddd0] bg-white px-4 py-2 text-sm text-[#8b7c6f] md:flex">
-                  <span className="text-base text-[#d05a1e]">⌕</span>
-                  <span>Search dishes...</span>
-                </div>
-                <a
-                  href="#order"
-                  className="rounded-full bg-[#d75a1f] px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813]"
-                >
-                  Order Online
-                </a>
-              </div>
-            </div>
-          </header>
-
           <div
             id="home"
             className="mx-auto flex flex-1 items-center justify-center px-4 pb-20 pt-36 text-center sm:px-8 sm:pt-40 lg:px-12"
@@ -156,12 +378,12 @@ export default function Home() {
 
       <section
         id="about"
-        className="mx-auto max-w-6xl px-6 py-24 text-center sm:px-8 lg:px-12"
+        className="relative z-0 mx-auto max-w-6xl px-6 py-24 text-center sm:px-8 lg:px-12"
       >
         <SectionLabel>Our Cultural Vision</SectionLabel>
         <blockquote className="mx-auto mt-8 max-w-4xl font-[family-name:var(--font-display)] text-4xl leading-tight tracking-[-0.03em] text-[#241711] sm:text-5xl lg:text-6xl">
           &quot;Food is the most intimate way to share a history. Through
-          Lusumpuko Pala, we are not just serving meals, we are preserving the
+          Lusumpuko Women's Club, we are not just serving meals, we are preserving the
           echoes of our ancestors for the generations of tomorrow.&quot;
         </blockquote>
         <div className="mx-auto mt-10 flex w-fit flex-col items-center">
@@ -177,7 +399,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="menu" className="bg-[#fffaf5] py-20">
+      <section id="menu" className="relative z-0 bg-[#fffaf5] py-20">
         <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
           <div className="flex flex-wrap items-end justify-between gap-5">
             <div>
@@ -198,7 +420,8 @@ export default function Home() {
           </div>
 
           <div className="mt-12 overflow-hidden rounded-[2rem] border border-[#efe1d3] bg-white shadow-[0_24px_60px_rgba(78,46,18,0.08)] lg:grid lg:grid-cols-[1.1fr_1fr]">
-            <div className="relative min-h-[320px] bg-[radial-gradient(circle_at_50%_52%,rgba(235,114,53,0.95),rgba(190,88,36,0.88)_22%,rgba(221,226,218,0.92)_23%,rgba(231,236,230,0.96)_34%,rgba(191,208,189,0.82)_43%,rgba(228,229,223,0.95)_52%,rgba(240,245,241,1)_100%),radial-gradient(circle_at_12%_18%,rgba(245,161,136,0.88),transparent_9%),radial-gradient(circle_at_82%_80%,rgba(186,226,182,0.95),transparent_14%),linear-gradient(135deg,#f4f1eb,#e7e4de)]">
+            <div className="relative min-h-[320px]" style={bestsellerImageStyle}>
+              <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(24,14,7,0.08)_0%,rgba(24,14,7,0.22)_100%)]" />
               <span className="absolute left-5 top-5 rounded-full bg-[#ff7e45] px-3 py-1 text-xs font-semibold text-white shadow">
                 Bestseller
               </span>
@@ -252,7 +475,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section id="discover" className="py-20">
+      <section id="discover" className="relative z-0 py-20">
         <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
           <div className="text-center">
             <h2 className="font-[family-name:var(--font-display)] text-4xl text-[#241711] sm:text-5xl">
@@ -269,8 +492,13 @@ export default function Home() {
               <article
                 key={card.title}
                 className={`group relative min-h-[280px] overflow-hidden rounded-[1.75rem] bg-gradient-to-br ${card.palette} p-5 text-white shadow-[0_20px_50px_rgba(51,27,9,0.16)]`}
+                style={{
+                  backgroundImage: `${card.image}, linear-gradient(135deg, rgba(21,14,10,0.08), rgba(21,14,10,0.42))`,
+                  backgroundPosition: "center center",
+                  backgroundSize: "cover",
+                }}
               >
-                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_22%,rgba(255,255,255,0.24),transparent_24%),linear-gradient(to_top,rgba(10,7,6,0.72),rgba(10,7,6,0.05))]" />
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_22%,rgba(255,255,255,0.18),transparent_24%),linear-gradient(to_top,rgba(10,7,6,0.78),rgba(10,7,6,0.1))]" />
                 <div className="absolute inset-x-5 bottom-5">
                   <p className="font-[family-name:var(--font-display)] text-2xl">
                     {card.title}
@@ -288,7 +516,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="py-20">
+      <section className="relative z-0 py-20">
         <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
           <div className="flex flex-wrap items-end justify-between gap-4">
             <div>
@@ -337,11 +565,30 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="border-y border-[#eadbcf] bg-[#fffaf5] py-16">
+      <section className="relative z-0 border-y border-[#eadbcf] bg-[#fffaf5] py-16">
         <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
           <div className="flex flex-wrap items-center justify-between gap-3">
             <div className="flex items-center gap-3">
-              <span className="text-xl text-[#d75a1f]">◌</span>
+              <span className="flex h-9 w-9 items-center justify-center rounded-full border border-[#efc2aa] text-[#d75a1f]">
+                <svg
+                  aria-hidden="true"
+                  viewBox="0 0 24 24"
+                  className="h-4 w-4 fill-none stroke-current"
+                  strokeWidth="1.8"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                >
+                  <rect x="3" y="3" width="18" height="18" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="0.9"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                </svg>
+              </span>
               <h2 className="font-[family-name:var(--font-display)] text-3xl text-[#261813]">
                 On the Gram
               </h2>
@@ -355,9 +602,14 @@ export default function Home() {
             {gramTiles.map((tile, index) => (
               <div
                 key={tile}
-                className={`aspect-square overflow-hidden rounded-[1.2rem] bg-gradient-to-br ${tile} shadow-[0_16px_35px_rgba(48,25,8,0.12)]`}
+                className="aspect-square overflow-hidden rounded-[1.2rem] shadow-[0_16px_35px_rgba(48,25,8,0.12)]"
+                style={{
+                  backgroundImage: `${tile}`,
+                  backgroundPosition: "center center",
+                  backgroundSize: "cover",
+                }}
               >
-                <div className="h-full w-full bg-[radial-gradient(circle_at_30%_25%,rgba(255,255,255,0.28),transparent_18%),radial-gradient(circle_at_70%_70%,rgba(255,255,255,0.12),transparent_20%),linear-gradient(to_top,rgba(8,5,4,0.2),rgba(8,5,4,0.02))]" />
+                <div className="h-full w-full bg-[radial-gradient(circle_at_30%_25%,rgba(255,255,255,0.2),transparent_18%),linear-gradient(to_top,rgba(8,5,4,0.22),rgba(8,5,4,0.02))]" />
                 <span className="sr-only">Gallery item {index + 1}</span>
               </div>
             ))}
@@ -365,7 +617,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-[#d7541b] py-16 text-white">
+      <section className="relative z-0 bg-[#d7541b] py-16 text-white">
         <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-12">
           <div className="max-w-xl">
             <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl">
@@ -393,7 +645,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer id="footer" className="bg-[#fffaf5] py-16">
+      <footer id="footer" className="relative z-0 bg-[#fffaf5] py-16">
         <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
           <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]">
             <div>
@@ -456,10 +708,51 @@ export default function Home() {
                 <li>+1 555 PALA DELIGHT</li>
                 <li>Mon-Sun: 10am - 9pm</li>
               </ul>
-              <div className="mt-6 flex gap-4 text-[#d75a1f]">
-                <span>◎</span>
-                <span>◐</span>
-                <span>◌</span>
+              <div className="mt-6 flex gap-3 text-[#d75a1f]">
+                <a
+                  href="#footer"
+                  aria-label="Instagram"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[#efc2aa] transition hover:bg-[#fff1e8]"
+                >
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4 fill-none stroke-current"
+                    strokeWidth="1.8"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <rect x="3" y="3" width="18" height="18" rx="5" />
+                    <circle cx="12" cy="12" r="4" />
+                    <circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none" />
+                  </svg>
+                </a>
+                <a
+                  href="#footer"
+                  aria-label="Facebook"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[#efc2aa] transition hover:bg-[#fff1e8]"
+                >
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4 fill-current"
+                  >
+                    <path d="M13.5 21v-7h2.4l.4-3h-2.8V9.2c0-.9.3-1.5 1.6-1.5H16V5.1c-.5-.1-1.4-.1-2.2-.1-2.2 0-3.8 1.3-3.8 3.9V11H7.6v3H10V21h3.5Z" />
+                  </svg>
+                </a>
+                <a
+                  href="#footer"
+                  aria-label="Twitter"
+                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[#efc2aa] transition hover:bg-[#fff1e8]"
+                >
+                  <svg
+                    aria-hidden="true"
+                    viewBox="0 0 24 24"
+                    className="h-4 w-4 fill-current"
+                  >
+                    <path d="M18.9 3H21l-4.6 5.3L22 21h-4.4l-3.4-4.7L10 21H7.8l4.9-5.7L2 3h4.5l3.1 4.3L13.5 3h2.2-1.8Zm-1.5 15.4h1.2L5.2 5.5H3.9l13.5 12.9Z" />
+                  </svg>
+                </a>
               </div>
             </div>
           </div>
