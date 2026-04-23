@@ -98,15 +98,9 @@ export default function RootsPage() {
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
               About
-<<<<<<< HEAD
             </Link>
             <Link
               href="/#menu"
-=======
-            </a>
-            <a
-              href="/menu"
->>>>>>> 679be4f23215a0f31fee13e7a73afa844abe83d4
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
               Menu
@@ -116,15 +110,9 @@ export default function RootsPage() {
               className="rounded-full bg-[#d75a1f] px-4 py-2 text-white shadow-[0_10px_20px_rgba(215,90,31,0.2)] transition hover:bg-[#c64d14]"
             >
               Roots
-<<<<<<< HEAD
             </Link>
             <Link
               href="/#footer"
-=======
-            </a>
-            <a
-              href="/stories"
->>>>>>> 679be4f23215a0f31fee13e7a73afa844abe83d4
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
               Explore
@@ -136,13 +124,8 @@ export default function RootsPage() {
               <span className="text-base text-[#d05a1e]">⌕</span>
               <span>Search dishes...</span>
             </div>
-<<<<<<< HEAD
             <Link
               href="/#order"
-=======
-            <a
-              href="/contact"
->>>>>>> 679be4f23215a0f31fee13e7a73afa844abe83d4
               className="rounded-full bg-[#d75a1f] px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813]"
             >
               Order Online
@@ -280,13 +263,8 @@ export default function RootsPage() {
             varieties from all three cultural pillars.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-<<<<<<< HEAD
             <Link
               href="/#menu"
-=======
-            <a
-              href="/menu"
->>>>>>> 679be4f23215a0f31fee13e7a73afa844abe83d4
               className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#d7541b] transition hover:bg-[#fff0e6]"
             >
               Explore the Menu

@@ -109,8 +109,8 @@ export default function AboutPage() {
               className="rounded-full bg-[#d75a1f] px-4 py-2 text-white shadow-[0_10px_20px_rgba(215,90,31,0.2)] transition hover:bg-[#c64d14]"
             >
               About
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#menu"
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
@@ -121,8 +121,8 @@ export default function AboutPage() {
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
               Roots
-            </a>
-            <a
+            </Link>
+            <Link
               href="/#footer"
               className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
             >
