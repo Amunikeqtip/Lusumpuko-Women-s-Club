@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 const discoverCards = [
   {
     title: "Full Menu",
@@ -53,51 +55,6 @@ const gramTiles = [
   "from-[#81464d] via-[#efb5c5] to-[#291219]",
 ];
 
-function PlaneterralMark() {
-  return (
-    <div className="flex items-center gap-3">
-      <svg
-        viewBox="0 0 78 78"
-        aria-hidden="true"
-        className="h-11 w-11 shrink-0 drop-shadow-[0_10px_20px_rgba(0,0,0,0.12)]"
-      >
-        <defs>
-          <linearGradient id="goldArc" x1="0%" x2="100%" y1="0%" y2="100%">
-            <stop offset="0%" stopColor="#f4bc45" />
-            <stop offset="100%" stopColor="#d98b12" />
-          </linearGradient>
-          <linearGradient id="greenLeaf" x1="0%" x2="100%" y1="0%" y2="100%">
-            <stop offset="0%" stopColor="#a6f0b5" />
-            <stop offset="100%" stopColor="#69d5b0" />
-          </linearGradient>
-          <linearGradient id="petal" x1="0%" x2="100%" y1="0%" y2="100%">
-            <stop offset="0%" stopColor="#ffffff" />
-            <stop offset="100%" stopColor="#ddd1ff" />
-          </linearGradient>
-        </defs>
-        <circle cx="39" cy="39" r="37" fill="#08362c" stroke="#0f1f1a" strokeWidth="2" />
-        <path
-          d="M24 16c10-3 24-2 38 4-9-1-16 1-21 5-5 4-8 10-8 20v15c-6-4-12-12-14-23-2-9 0-17 5-21Z"
-          fill="url(#goldArc)"
-        />
-        <path
-          d="M56 24c9 8 13 18 11 30-2 12-10 20-24 24-4 1-9 1-14 0 5-5 9-10 11-15 3-7 9-11 18-12 8-2 14-5 18-10-1-6-2-11-4-17Z"
-          fill="url(#greenLeaf)"
-        />
-        <path
-          d="M34 49c0-12 5-20 16-24 8-3 17-3 26-2 1 7 0 14-3 20-5 9-15 15-30 18 0-4 0-8 1-12Z"
-          fill="url(#petal)"
-        />
-      </svg>
-      <div className="leading-none">
-        <div className="font-[family-name:var(--font-display)] text-[0.72rem] tracking-[0.38em] text-[#0d3c2d]">
-          PLANETERRA
-        </div>
-      </div>
-    </div>
-  );
-}
-
 function SectionLabel({ children }: { children: React.ReactNode }) {
   return (
     <p className="text-center font-sans text-[0.68rem] font-semibold uppercase tracking-[0.45em] text-[#cb5c22]">
@@ -108,15 +65,24 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 
 export default function Home() {
   return (
-    <main className="bg-[#f7f0e8] text-[#2f241d]">
+    <main className="relative isolate bg-[#f7f0e8] text-[#2f241d]">
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_35%,rgba(231,168,82,0.78),transparent_20%),radial-gradient(circle_at_58%_38%,rgba(111,173,104,0.88),transparent_28%),radial-gradient(circle_at_44%_40%,rgba(134,34,38,0.58),transparent_16%),radial-gradient(circle_at_62%_58%,rgba(110,51,143,0.38),transparent_12%),radial-gradient(circle_at_36%_53%,rgba(198,230,164,0.8),transparent_16%),radial-gradient(circle_at_54%_48%,rgba(250,244,233,0.55),transparent_21%),linear-gradient(rgba(31,21,12,0.5),rgba(31,21,12,0.6)),repeating-linear-gradient(90deg,#6a5646_0px,#6a5646_3px,#5d4939_3px,#5d4939_12px)]" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_0%,transparent_32%,rgba(12,7,4,0.42)_72%,rgba(12,7,4,0.78)_100%)]" />
 
         <div className="relative mx-auto flex min-h-screen w-full max-w-[1400px] flex-col px-4 pb-16 pt-4 sm:px-6 lg:px-10">
-          <header className="rounded-full border border-white/55 bg-[#fffaf4]/95 px-4 py-3 shadow-[0_16px_50px_rgba(53,32,14,0.12)] backdrop-blur md:px-6">
+          <header className="fixed left-1/2 top-4 z-[120] isolate w-[calc(100%-2rem)] max-w-[1320px] -translate-x-1/2 rounded-full border border-white/55 bg-[#fffaf4]/95 px-4 py-3 shadow-[0_16px_50px_rgba(53,32,14,0.12)] backdrop-blur md:w-[calc(100%-3rem)] md:px-6 lg:w-[calc(100%-5rem)]">
             <div className="flex flex-wrap items-center justify-between gap-4">
-              <PlaneterralMark />
+              <div className="flex items-center">
+                <Image
+                  src="/planeterra.png"
+                  alt="Planeterra logo"
+                  width={220}
+                  height={76}
+                  priority
+                  className="h-11 w-auto object-contain md:h-12"
+                />
+              </div>
 
               <nav className="hidden items-center gap-6 text-sm text-[#6b5a4a] lg:flex">
                 <a href="#home" className="text-[#d05a1e]">
@@ -153,7 +119,7 @@ export default function Home() {
 
           <div
             id="home"
-            className="mx-auto flex flex-1 items-center justify-center px-4 py-20 text-center sm:px-8 lg:px-12"
+            className="mx-auto flex flex-1 items-center justify-center px-4 pb-20 pt-36 text-center sm:px-8 sm:pt-40 lg:px-12"
           >
             <div className="max-w-4xl text-white">
               <span className="inline-flex rounded-full border border-white/35 bg-white/12 px-4 py-1 text-xs font-semibold uppercase tracking-[0.3em] text-white/90 backdrop-blur">
