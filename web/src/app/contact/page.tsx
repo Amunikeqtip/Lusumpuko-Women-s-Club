@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useState } from "react";
 
 const contactItems = [
@@ -59,11 +60,11 @@ function SiteHeader() {
         </div>
 
         <nav className="hidden items-center gap-2 rounded-full border border-white/30 bg-white/18 p-1.5 text-[0.9rem] font-medium text-[#58473d] shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] lg:flex">
-          <a href="/" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">Home</a>
-          <a href="/about" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">About</a>
-          <a href="/menu" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">Menu</a>
-          <a href="/roots" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">Roots</a>
-          <a href="/stories" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">Explore</a>
+          <Link href="/" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">Home</Link>
+          <Link href="/about" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">About</Link>
+          <Link href="/menu" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">Menu</Link>
+          <Link href="/roots" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">Roots</Link>
+          <Link href="/stories" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">Explore</Link>
         </nav>
 
         <div className="flex flex-1 items-center justify-end gap-3 md:flex-none">
@@ -159,9 +160,9 @@ function SiteFooter() {
         <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-[#eadfd5] pt-6 text-xs uppercase tracking-[0.18em] text-[#9f8b7c]">
           <p>© 2026 Lusumpuko Pala. All rights reserved.</p>
           <div className="flex gap-6">
-            <a href="/#footer">Privacy Policy</a>
-            <a href="/#footer">Terms of Service</a>
-            <a href="/#footer">Sitemap</a>
+            <Link href="/#footer">Privacy Policy</Link>
+            <Link href="/#footer">Terms of Service</Link>
+            <Link href="/#footer">Sitemap</Link>
           </div>
         </div>
       </div>

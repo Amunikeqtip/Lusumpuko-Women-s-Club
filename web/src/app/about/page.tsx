@@ -401,12 +401,12 @@ export default function AboutPage() {
             people who made this dish a legend.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <a
+            <Link
               href="/#order"
               className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#d7541b] transition hover:bg-[#fff0e6]"
             >
               Order Online Now
-            </a>
+            </Link>
             <Link
               href="/roots"
               className="rounded-full border border-white/35 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/16"

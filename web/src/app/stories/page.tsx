@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 
 const testimonials = [
   ["Chipo Moyo", "Harare, Zimbabwe", "The Pala here tastes exactly like the one my grandmother used to make in the village. It's more than food; it's a trip down memory lane."],
@@ -42,11 +43,11 @@ export default function StoriesPage() {
             </div>
           </div>
           <nav className="hidden items-center gap-2 rounded-full border border-white/30 bg-white/18 p-1.5 text-[0.9rem] font-medium text-[#58473d] shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] lg:flex">
-            <a href="/" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">Home</a>
-            <a href="/about" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">About</a>
-            <a href="/menu" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">Menu</a>
-            <a href="/roots" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">Roots</a>
-            <a href="/stories" className="rounded-full bg-[#d75a1f] px-4 py-2 text-white shadow-[0_10px_20px_rgba(215,90,31,0.2)] transition hover:bg-[#c64d14]">Explore</a>
+            <Link href="/" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">Home</Link>
+            <Link href="/about" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">About</Link>
+            <Link href="/menu" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">Menu</Link>
+            <Link href="/roots" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">Roots</Link>
+            <Link href="/stories" className="rounded-full bg-[#d75a1f] px-4 py-2 text-white shadow-[0_10px_20px_rgba(215,90,31,0.2)] transition hover:bg-[#c64d14]">Explore</Link>
           </nav>
           <a href="/contact" className="rounded-full bg-[#d75a1f] px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813]">Order Online</a>
         </div>
