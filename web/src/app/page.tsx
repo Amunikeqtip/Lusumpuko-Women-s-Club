@@ -1,7 +1,10 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import { SiteFooter } from "../components/site-footer";
+import { SiteHeader } from "../components/site-header";
 
 const discoverCards = [
   {
@@ -240,98 +243,39 @@ export default function Home() {
         </div>
       ) : null}
 
-      <header className="fixed left-1/2 top-4 z-[999] w-[calc(100%-2rem)] max-w-[1320px] -translate-x-1/2 rounded-full border border-white/35 bg-[linear-gradient(135deg,rgba(255,250,244,0.62),rgba(255,244,236,0.28))] px-4 py-3 shadow-[0_18px_55px_rgba(53,32,14,0.18)] backdrop-blur-xl supports-[backdrop-filter]:bg-[linear-gradient(135deg,rgba(255,250,244,0.52),rgba(255,244,236,0.18))] max-sm:top-3 max-sm:w-[calc(100%-1rem)] max-sm:rounded-[1.6rem] max-sm:border-[#f1c2a2] max-sm:bg-[linear-gradient(135deg,rgba(255,248,242,0.98),rgba(255,231,216,0.92))] max-sm:px-3 max-sm:py-2.5 max-sm:shadow-[0_20px_55px_rgba(75,32,12,0.16)] md:w-[calc(100%-3rem)] md:px-6 lg:w-[calc(100%-5rem)]">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-2.5 sm:gap-4">
-            <Image
-              src="/planeterra.png"
-              alt="Planeterra logo"
-              width={220}
-              height={76}
-              priority
-              className="h-9 w-auto object-contain sm:h-11 md:h-12"
-            />
-            <div className="h-9 w-px bg-[#ead9ca] sm:h-10" />
-            <div>
-              <p className="font-[family-name:var(--font-display)] text-[0.95rem] leading-none text-[#c74f19] sm:text-lg md:text-xl">
-                Lusumpuko Women&apos;s Club
-              </p>
-              <p className="mt-1 text-[0.48rem] font-semibold uppercase tracking-[0.18em] text-[#8d7869] sm:text-[0.65rem] sm:tracking-[0.3em]">
-                Heritage Dining Experience
-              </p>
-            </div>
-          </div>
-
-          <nav className="hidden items-center gap-2 rounded-full border border-white/30 bg-white/18 p-1.5 text-[0.9rem] font-medium text-[#58473d] shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] lg:flex">
-            <a
-              href="#home"
-              className="rounded-full bg-[#d75a1f] px-4 py-2 text-white shadow-[0_10px_20px_rgba(215,90,31,0.2)] transition hover:bg-[#c64d14]"
-            >
-              Home
-            </a>
-            <a
-              href="/about"
-              className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
-            >
-              About
-            </a>
-            <a
-              href="/menu"
-              className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
-            >
-              Menu
-            </a>
-            <a
-              href="/roots"
-              className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
-            >
-              Roots
-            </a>
-            <a
-              href="/stories"
-              className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]"
-            >
-              Explore
-            </a>
-          </nav>
-
-          <div className="flex flex-1 items-center justify-end gap-3 md:flex-none">
-            <form
-              onSubmit={(event) => {
-                event.preventDefault();
+      <SiteHeader
+        homeHref="#home"
+        variant="home"
+        desktopSearchSlot={
+          <form
+            onSubmit={(event) => {
+              event.preventDefault();
+              setIsSearchOpen(true);
+            }}
+            className="hidden min-w-[270px] items-center gap-2 rounded-full border border-[#e8ddd0] bg-white/82 px-3 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] md:flex"
+          >
+            <span className="pl-1 text-base text-[#d05a1e]">⌕</span>
+            <input
+              type="search"
+              value={searchQuery}
+              onFocus={() => setIsSearchOpen(true)}
+              onChange={(event) => {
+                setSearchQuery(event.target.value);
                 setIsSearchOpen(true);
               }}
-              className="hidden min-w-[270px] items-center gap-2 rounded-full border border-[#e8ddd0] bg-white/82 px-3 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] md:flex"
+              placeholder="Search dishes..."
+              className="w-full bg-transparent text-sm text-[#5f5045] outline-none placeholder:text-[#9a887a]"
+              aria-label="Search dishes"
+            />
+            <button
+              type="submit"
+              className="rounded-full bg-[#f8eee5] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#c45a24] transition hover:bg-[#f3e1d2]"
             >
-              <span className="pl-1 text-base text-[#d05a1e]">⌕</span>
-              <input
-                type="search"
-                value={searchQuery}
-                onFocus={() => setIsSearchOpen(true)}
-                onChange={(event) => {
-                  setSearchQuery(event.target.value);
-                  setIsSearchOpen(true);
-                }}
-                placeholder="Search dishes..."
-                className="w-full bg-transparent text-sm text-[#5f5045] outline-none placeholder:text-[#9a887a]"
-                aria-label="Search dishes"
-              />
-              <button
-                type="submit"
-                className="rounded-full bg-[#f8eee5] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#c45a24] transition hover:bg-[#f3e1d2]"
-              >
-                Find
-              </button>
-            </form>
-            <a
-              href="/contact"
-              className="hidden rounded-full bg-[#d75a1f] px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813] md:inline-flex"
-            >
-              Order Online
-            </a>
-          </div>
-        </div>
-      </header>
+              Find
+            </button>
+          </form>
+        }
+      />
 
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0" style={heroBackgroundStyle} />
@@ -645,128 +589,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer id="footer" className="relative z-0 bg-[#fffaf5] py-16">
-        <div className="mx-auto max-w-6xl px-6 sm:px-8 lg:px-12">
-          <div className="grid gap-10 lg:grid-cols-[1.4fr_1fr_1fr_1.1fr]">
-            <div>
-              <div className="flex items-center gap-3">
-                <span className="text-[#d75a1f]">◇</span>
-                <p className="font-[family-name:var(--font-display)] text-2xl text-[#271913]">
-                  Lusumpuko Pala
-                </p>
-              </div>
-              <p className="mt-5 max-w-sm text-sm leading-7 text-[#6e5f53]">
-                Preserving the legacy of traditional Pala through authentic
-                flavors and cultural storytelling.
-              </p>
-              <div className="mt-6 flex max-w-sm gap-3">
-                <input
-                  type="email"
-                  placeholder="Email Address"
-                  className="h-12 flex-1 rounded-full border border-[#eadbce] bg-white px-4 text-sm outline-none placeholder:text-[#9c8778]"
-                />
-                <button
-                  type="button"
-                  className="rounded-full bg-[#d75a1f] px-5 text-sm font-semibold text-white"
-                >
-                  Join
-                </button>
-              </div>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-[0.28em] text-[#a08675]">
-                The Experience
-              </h3>
-              <ul className="mt-4 space-y-3 text-sm text-[#54463b]">
-                <li>About Our Story</li>
-                <li>Cultural Traditions</li>
-                <li>Full Menu</li>
-                <li>Home Recipes</li>
-                <li>Visual Gallery</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-[0.28em] text-[#a08675]">
-                Community
-              </h3>
-              <ul className="mt-4 space-y-3 text-sm text-[#54463b]">
-                <li>Customer Testimonials</li>
-                <li>Loyal Member Salon</li>
-                <li>Ordering Support</li>
-                <li>Contact Us</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3 className="text-sm font-semibold uppercase tracking-[0.28em] text-[#a08675]">
-                Get In Touch
-              </h3>
-              <ul className="mt-4 space-y-3 text-sm leading-7 text-[#54463b]">
-                <li>123 Heritage Lane, Lusumpuko Valley</li>
-                <li>+1 555 PALA DELIGHT</li>
-                <li>Mon-Sun: 10am - 9pm</li>
-              </ul>
-              <div className="mt-6 flex gap-3 text-[#d75a1f]">
-                <a
-                  href="#footer"
-                  aria-label="Instagram"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[#efc2aa] transition hover:bg-[#fff1e8]"
-                >
-                  <svg
-                    aria-hidden="true"
-                    viewBox="0 0 24 24"
-                    className="h-4 w-4 fill-none stroke-current"
-                    strokeWidth="1.8"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  >
-                    <rect x="3" y="3" width="18" height="18" rx="5" />
-                    <circle cx="12" cy="12" r="4" />
-                    <circle cx="17.5" cy="6.5" r="0.9" fill="currentColor" stroke="none" />
-                  </svg>
-                </a>
-                <a
-                  href="#footer"
-                  aria-label="Facebook"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[#efc2aa] transition hover:bg-[#fff1e8]"
-                >
-                  <svg
-                    aria-hidden="true"
-                    viewBox="0 0 24 24"
-                    className="h-4 w-4 fill-current"
-                  >
-                    <path d="M13.5 21v-7h2.4l.4-3h-2.8V9.2c0-.9.3-1.5 1.6-1.5H16V5.1c-.5-.1-1.4-.1-2.2-.1-2.2 0-3.8 1.3-3.8 3.9V11H7.6v3H10V21h3.5Z" />
-                  </svg>
-                </a>
-                <a
-                  href="#footer"
-                  aria-label="Twitter"
-                  className="flex h-10 w-10 items-center justify-center rounded-full border border-[#efc2aa] transition hover:bg-[#fff1e8]"
-                >
-                  <svg
-                    aria-hidden="true"
-                    viewBox="0 0 24 24"
-                    className="h-4 w-4 fill-current"
-                  >
-                    <path d="M18.9 3H21l-4.6 5.3L22 21h-4.4l-3.4-4.7L10 21H7.8l4.9-5.7L2 3h4.5l3.1 4.3L13.5 3h2.2-1.8Zm-1.5 15.4h1.2L5.2 5.5H3.9l13.5 12.9Z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
-          </div>
-
-          <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-[#eadfd5] pt-6 text-xs uppercase tracking-[0.18em] text-[#9f8b7c]">
-            <p>© 2026 Lusumpuko Pala. All rights reserved.</p>
-            <div className="flex gap-6">
-              <a href="#footer">Privacy Policy</a>
-              <a href="#footer">Terms of Service</a>
-              <a href="#footer">Rewards</a>
-            </div>
-          </div>
-        </div>
-      </footer>
+      <SiteFooter id="footer" showSocialIcons />
     </main>
   );
 }

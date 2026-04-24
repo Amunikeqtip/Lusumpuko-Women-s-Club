@@ -5,6 +5,11 @@ import { GlobalChrome } from "../components/site-chrome";
 export const metadata: Metadata = {
   title: "Lusumpuko Women's Club",
   description: "A warm cultural dining landing page for Lusumpuko Pala.",
+  icons: {
+    icon: "/lwc-favicon.svg",
+    shortcut: "/lwc-favicon.svg",
+    apple: "/lwc-favicon.svg",
+  },
 };
 
 export default function RootLayout({

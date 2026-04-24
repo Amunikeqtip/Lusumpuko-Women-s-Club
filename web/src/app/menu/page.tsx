@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { SiteHeader } from "../../components/site-header";
 
 const traditionalPala = [
   {
@@ -210,36 +211,7 @@ function MenuCard({
 export default function MenuPage() {
   return (
     <main className="bg-[#fbf7f2] text-[#2a1c15]">
-      <header className="fixed left-1/2 top-4 z-[999] w-[calc(100%-2rem)] max-w-[1320px] -translate-x-1/2 rounded-full border border-white/35 bg-[linear-gradient(135deg,rgba(255,250,244,0.72),rgba(255,244,236,0.34))] px-4 py-3 shadow-[0_18px_55px_rgba(53,32,14,0.18)] backdrop-blur-xl max-sm:top-3 max-sm:w-[calc(100%-1rem)] max-sm:rounded-[1.6rem] max-sm:border-[#f1c2a2] max-sm:bg-[linear-gradient(135deg,rgba(255,248,242,0.98),rgba(255,231,216,0.92))] max-sm:px-3 max-sm:py-2.5 max-sm:shadow-[0_20px_55px_rgba(75,32,12,0.16)] md:w-[calc(100%-3rem)] md:px-6 lg:w-[calc(100%-5rem)]">
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-2.5 sm:gap-4">
-            <Image src="/planeterra.png" alt="Planeterra logo" width={220} height={76} priority className="h-9 w-auto object-contain sm:h-11 md:h-12" />
-            <div className="h-9 w-px bg-[#ead9ca] sm:h-10" />
-            <div>
-              <p className="font-[family-name:var(--font-display)] text-[0.95rem] leading-none text-[#c74f19] sm:text-lg md:text-xl">
-                Lusumpuko Women&apos;s Club
-              </p>
-              <p className="mt-1 text-[0.48rem] font-semibold uppercase tracking-[0.18em] text-[#8d7869] sm:text-[0.65rem] sm:tracking-[0.3em]">
-                Heritage Dining Experience
-              </p>
-            </div>
-          </div>
-          <nav className="hidden items-center gap-2 rounded-full border border-white/30 bg-white/18 p-1.5 text-[0.9rem] font-medium text-[#58473d] shadow-[inset_0_1px_0_rgba(255,255,255,0.3)] lg:flex">
-            <Link href="/" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">Home</Link>
-            <Link href="/about" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">About</Link>
-            <Link href="/menu" className="rounded-full bg-[#d75a1f] px-4 py-2 text-white shadow-[0_10px_20px_rgba(215,90,31,0.2)] transition hover:bg-[#c64d14]">Menu</Link>
-            <Link href="/roots" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">Roots</Link>
-            <Link href="/stories" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">Explore</Link>
-          </nav>
-          <div className="flex flex-1 items-center justify-end gap-3 md:flex-none">
-            <div className="hidden min-w-[240px] items-center gap-2 rounded-full border border-[#e8ddd0] bg-white/82 px-4 py-2 text-sm text-[#8b7c6f] md:flex">
-              <span className="text-base text-[#d05a1e]">⌕</span>
-              <span>Search dishes...</span>
-            </div>
-            <a href="/contact" className="hidden rounded-full bg-[#d75a1f] px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813] md:inline-flex">Order Online</a>
-          </div>
-        </div>
-      </header>
+      <SiteHeader showDesktopSearchPlaceholder />
 
       <section className="mx-auto max-w-6xl px-6 pb-10 pt-36 sm:px-8 lg:px-12 lg:pt-40">
         <div className="relative overflow-hidden rounded-[2rem] border border-[#efe0d5] bg-[linear-gradient(135deg,#fff6f0,#fffdfb)] px-8 py-14 shadow-[0_18px_45px_rgba(60,31,12,0.05)]">
