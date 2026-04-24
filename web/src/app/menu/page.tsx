@@ -2,6 +2,8 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
+import { useEffect, useState } from "react";
 import { SiteFooter } from "../../components/site-footer";
 import { SiteHeader } from "../../components/site-header";
 
@@ -210,6 +212,52 @@ function MenuCard({
 }
 
 export default function MenuPage() {
+  const router = useRouter();
+  const [searchQuery, setSearchQuery] = useState("");
+  const normalizedQuery = searchQuery.trim().toLowerCase();
+  const matchesSearch = (value: string) =>
+    value.toLowerCase().includes(normalizedQuery);
+
+  useEffect(() => {
+    const nextSearchQuery =
+      typeof window === "undefined"
+        ? ""
+        : new URLSearchParams(window.location.search).get("q") ?? "";
+
+    setSearchQuery((currentValue) =>
+      currentValue === nextSearchQuery ? currentValue : nextSearchQuery,
+    );
+  });
+
+  const filteredTraditionalPala = traditionalPala.filter((item) =>
+    normalizedQuery
+      ? matchesSearch(
+          `${item.title} ${item.tag} ${item.description} traditional pala`,
+        )
+      : true,
+  );
+  const filteredChefsVariations = chefsVariations.filter((item) =>
+    normalizedQuery
+      ? matchesSearch(`${item.title} ${item.description} chef variation`)
+      : true,
+  );
+  const filteredSidesAndDrinks = sidesAndDrinks
+    .map((group) => ({
+      ...group,
+      items: group.items.filter((item) =>
+        normalizedQuery
+          ? matchesSearch(
+              `${group.group} ${item.title} ${item.price} pairing botanical`,
+            )
+          : true,
+      ),
+    }))
+    .filter((group) => group.items.length > 0);
+  const resultCount =
+    filteredTraditionalPala.length +
+    filteredChefsVariations.length +
+    filteredSidesAndDrinks.reduce((total, group) => total + group.items.length, 0);
+
   return (
     <main className="bg-[#fbf7f2] text-[#2a1c15]">
       <SiteHeader showDesktopSearchPlaceholder />
@@ -247,13 +295,55 @@ export default function MenuPage() {
               </span>
             ))}
           </div>
-          <div className="flex min-w-[260px] items-center gap-2 rounded-full border border-[#ead9ca] bg-[#fffaf4] px-4 py-2 text-sm text-[#958377]">
-            <span>⌕</span>
-            <span>Search flavors...</span>
-          </div>
+          <form
+            onSubmit={(event) => {
+              event.preventDefault();
+              const formData = new FormData(event.currentTarget);
+              const nextQuery = String(formData.get("menu-search") ?? "").trim();
+              setSearchQuery(nextQuery);
+              router.push(
+                nextQuery ? `/menu?q=${encodeURIComponent(nextQuery)}` : "/menu",
+              );
+            }}
+            className="flex min-w-[260px] items-center gap-2 rounded-full border border-[#ead9ca] bg-[#fffaf4] px-4 py-2 text-sm text-[#958377]"
+          >
+            <span className="text-[#d05a1e]">⌕</span>
+            <input
+              type="search"
+              name="menu-search"
+              defaultValue={searchQuery}
+              placeholder="Search flavors..."
+              className="w-full bg-transparent text-[#5f5045] outline-none placeholder:text-[#958377]"
+              aria-label="Search menu flavors"
+            />
+          </form>
         </div>
       </section>
 
+      {normalizedQuery ? (
+        <section className="mx-auto max-w-6xl px-6 py-2 sm:px-8 lg:px-12">
+          <div className="rounded-[1.25rem] border border-[#f0d8c9] bg-[#fff4eb] px-5 py-4">
+            <p className="text-xs font-semibold uppercase tracking-[0.24em] text-[#c25b24]">
+              Search Results
+            </p>
+            <div className="mt-2 flex flex-wrap items-center justify-between gap-3">
+              <p className="font-[family-name:var(--font-display)] text-2xl text-[#241711]">
+                {resultCount > 0
+                  ? `${resultCount} match${resultCount === 1 ? "" : "es"} for "${searchQuery}"`
+                  : `No matches for "${searchQuery}"`}
+              </p>
+              <Link
+                href="/menu"
+                className="rounded-full border border-[#e6c7b4] px-4 py-2 text-sm font-semibold text-[#7b5b49] transition hover:bg-white"
+              >
+                Clear Search
+              </Link>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
+      {filteredTraditionalPala.length > 0 ? (
       <section className="mx-auto max-w-6xl px-6 py-8 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between gap-4">
           <div>
@@ -261,16 +351,18 @@ export default function MenuPage() {
             <p className="mt-2 text-sm text-[#7b6a5d]">Ancient recipes preserved in their purest form.</p>
           </div>
           <span className="rounded-full border border-[#ead9ca] px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-[#7e6c60]">
-            6 items
+            {filteredTraditionalPala.length} items
           </span>
         </div>
         <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-4">
-          {traditionalPala.map((item) => (
+          {filteredTraditionalPala.map((item) => (
             <MenuCard key={item.title} {...item} />
           ))}
         </div>
       </section>
+      ) : null}
 
+      {filteredChefsVariations.length > 0 ? (
       <section className="mx-auto max-w-6xl px-6 py-8 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between gap-4">
           <div>
@@ -278,19 +370,21 @@ export default function MenuPage() {
             <p className="mt-2 text-sm text-[#7b6a5d]">Contemporary interpretations and seasonal fusion.</p>
           </div>
           <span className="rounded-full border border-[#ead9ca] px-3 py-1 text-xs font-semibold uppercase tracking-[0.22em] text-[#7e6c60]">
-            6 items
+            {filteredChefsVariations.length} items
           </span>
         </div>
         <div className="mt-8 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-          {chefsVariations.map((item) => (
+          {filteredChefsVariations.map((item) => (
             <MenuCard key={item.title} {...item} />
           ))}
         </div>
       </section>
+      ) : null}
 
+      {filteredSidesAndDrinks.length > 0 ? (
       <section className="mx-auto max-w-6xl px-6 py-8 sm:px-8 lg:px-12">
         <div className="grid gap-10 lg:grid-cols-2">
-          {sidesAndDrinks.map((group) => (
+          {filteredSidesAndDrinks.map((group) => (
             <div key={group.group}>
               <div className="flex items-center justify-between gap-4">
                 <h2 className="font-[family-name:var(--font-display)] text-4xl text-[#241711]">{group.group}</h2>
@@ -313,6 +407,20 @@ export default function MenuPage() {
           ))}
         </div>
       </section>
+      ) : null}
+
+      {normalizedQuery && resultCount === 0 ? (
+        <section className="mx-auto max-w-6xl px-6 py-10 sm:px-8 lg:px-12">
+          <div className="rounded-[1.6rem] border border-dashed border-[#ead6c8] bg-white px-6 py-10 text-center shadow-[0_14px_35px_rgba(51,27,9,0.04)]">
+            <p className="font-[family-name:var(--font-display)] text-3xl text-[#241711]">
+              No dishes matched your search
+            </p>
+            <p className="mt-3 text-sm leading-7 text-[#756559]">
+              Try searching for terms like Pala, Ndebele, Shona, okra, baobab, or relish.
+            </p>
+          </div>
+        </section>
+      ) : null}
 
       <section className="mx-auto grid max-w-6xl gap-10 px-6 py-14 sm:px-8 lg:grid-cols-2 lg:px-12">
         <div>
