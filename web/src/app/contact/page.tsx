@@ -37,7 +37,7 @@ const orderItems = [
 
 function SiteHeader() {
   return (
-    <header className="fixed left-1/2 top-4 z-[999] w-[calc(100%-2rem)] max-w-[1320px] -translate-x-1/2 rounded-full border border-white/35 bg-[linear-gradient(135deg,rgba(255,250,244,0.72),rgba(255,244,236,0.34))] px-4 py-3 shadow-[0_18px_55px_rgba(53,32,14,0.18)] backdrop-blur-xl md:w-[calc(100%-3rem)] md:px-6 lg:w-[calc(100%-5rem)]">
+    <header className="fixed left-1/2 top-4 z-[999] w-[calc(100%-2rem)] max-w-[1320px] -translate-x-1/2 rounded-full border border-white/35 bg-[linear-gradient(135deg,rgba(255,250,244,0.72),rgba(255,244,236,0.34))] px-4 py-3 shadow-[0_18px_55px_rgba(53,32,14,0.18)] backdrop-blur-xl max-sm:top-3 max-sm:w-[calc(100%-1rem)] max-sm:rounded-[1.6rem] max-sm:border-[#f1c2a2] max-sm:bg-[linear-gradient(135deg,rgba(255,248,242,0.98),rgba(255,231,216,0.92))] max-sm:px-3 max-sm:py-2.5 max-sm:shadow-[0_20px_55px_rgba(75,32,12,0.16)] md:w-[calc(100%-3rem)] md:px-6 lg:w-[calc(100%-5rem)]">
       <div className="flex flex-wrap items-center justify-between gap-4">
         <div className="flex items-center gap-4">
           <Image
@@ -69,7 +69,7 @@ function SiteHeader() {
 
         <div className="flex flex-1 items-center justify-end gap-3 md:flex-none">
           <div className="text-right sm:hidden">
-            <p className="font-[family-name:var(--font-display)] text-sm leading-tight text-[#c74f19]">
+            <p className="inline-flex rounded-full border border-[#f2b38f] bg-[#d75a1f] px-3 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.24em] text-white shadow-[0_10px_20px_rgba(215,90,31,0.22)]">
               Lusumpuko Woman&apos;s Club
             </p>
           </div>
