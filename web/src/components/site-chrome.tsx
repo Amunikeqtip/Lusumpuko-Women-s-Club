@@ -4,7 +4,15 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import type { ComponentType } from "react";
 import { FaWhatsapp } from "react-icons/fa";
-import { FiHome, FiInfo, FiMail, FiMapPin, FiMenu, FiMessageCircle } from "react-icons/fi";
+import {
+  FiArrowRight,
+  FiHome,
+  FiInfo,
+  FiMail,
+  FiMapPin,
+  FiMenu,
+  FiMessageCircle,
+} from "react-icons/fi";
 
 type NavItem = {
   href: string;
@@ -60,7 +68,7 @@ export function GlobalChrome() {
         </div>
       </nav>
 
-      <div className="fixed bottom-24 left-3 z-[1200] md:bottom-8 md:left-6">
+      <div className="fixed bottom-24 right-3 z-[1200] md:bottom-8 md:right-6">
         <div className="flex items-center gap-2 rounded-full border border-white/40 bg-[linear-gradient(135deg,rgba(255,250,244,0.94),rgba(255,244,236,0.84))] p-2 shadow-[0_18px_55px_rgba(53,32,14,0.18)] backdrop-blur-xl">
           <a
             href="https://wa.me/263770000000?text=Hello%20Lusumpuko%20team%2C%20I%27d%20like%20to%20make%20an%20order%20or%20enquiry."
@@ -78,9 +86,16 @@ export function GlobalChrome() {
           >
             <FiMail className="text-[1.15rem]" aria-hidden="true" />
           </a>
+          <Link
+            href="/contact"
+            aria-label="Order online"
+            className="inline-flex h-11 items-center gap-2 rounded-full bg-[#d75a1f] px-4 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813] hover:scale-105"
+          >
+            <FiArrowRight className="text-base" aria-hidden="true" />
+            <span>Order Now</span>
+          </Link>
         </div>
       </div>
     </>
   );
 }
-
