@@ -77,21 +77,21 @@ export default function AboutPage() {
     <main className="bg-[#fbf7f2] text-[#2a1c15]">
       <header className="fixed left-1/2 top-4 z-[999] w-[calc(100%-2rem)] max-w-[1320px] -translate-x-1/2 rounded-full border border-white/35 bg-[linear-gradient(135deg,rgba(255,250,244,0.72),rgba(255,244,236,0.34))] px-4 py-3 shadow-[0_18px_55px_rgba(53,32,14,0.18)] backdrop-blur-xl max-sm:top-3 max-sm:w-[calc(100%-1rem)] max-sm:rounded-[1.6rem] max-sm:border-[#f1c2a2] max-sm:bg-[linear-gradient(135deg,rgba(255,248,242,0.98),rgba(255,231,216,0.92))] max-sm:px-3 max-sm:py-2.5 max-sm:shadow-[0_20px_55px_rgba(75,32,12,0.16)] md:w-[calc(100%-3rem)] md:px-6 lg:w-[calc(100%-5rem)]">
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center gap-4">
+          <div className="flex items-center gap-2.5 sm:gap-4">
             <Image
               src="/planeterra.png"
               alt="Planeterra logo"
               width={220}
               height={76}
               priority
-              className="h-11 w-auto object-contain md:h-12"
+              className="h-9 w-auto object-contain sm:h-11 md:h-12"
             />
-            <div className="hidden h-10 w-px bg-[#ead9ca] sm:block" />
-            <div className="hidden sm:block">
-              <p className="font-[family-name:var(--font-display)] text-lg leading-none text-[#c74f19] md:text-xl">
+            <div className="h-9 w-px bg-[#ead9ca] sm:h-10" />
+            <div>
+              <p className="font-[family-name:var(--font-display)] text-[0.95rem] leading-none text-[#c74f19] sm:text-lg md:text-xl">
                 Lusumpuko Women&apos;s Club
               </p>
-              <p className="mt-1 text-[0.65rem] font-semibold uppercase tracking-[0.3em] text-[#8d7869]">
+              <p className="mt-1 text-[0.48rem] font-semibold uppercase tracking-[0.18em] text-[#8d7869] sm:text-[0.65rem] sm:tracking-[0.3em]">
                 Heritage Dining Experience
               </p>
             </div>
@@ -131,11 +131,6 @@ export default function AboutPage() {
           </nav>
 
           <div className="flex flex-1 items-center justify-end gap-3 md:flex-none">
-            <div className="text-right sm:hidden">
-              <p className="inline-flex rounded-full border border-[#f2b38f] bg-[#d75a1f] px-3 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.24em] text-white shadow-[0_10px_20px_rgba(215,90,31,0.22)]">
-                Lusumpuko Women&apos;s Club
-              </p>
-            </div>
             <div className="hidden min-w-[240px] items-center gap-2 rounded-full border border-[#e8ddd0] bg-white/82 px-4 py-2 text-sm text-[#8b7c6f] md:flex">
               <span className="text-base text-[#d05a1e]">⌕</span>
               <span>Search dishes...</span>
