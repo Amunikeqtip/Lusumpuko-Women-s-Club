@@ -234,7 +234,7 @@ export default function MenuPage() {
           <div className="flex flex-1 items-center justify-end gap-3 md:flex-none">
             <div className="text-right sm:hidden">
               <p className="inline-flex rounded-full border border-[#f2b38f] bg-[#d75a1f] px-3 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.24em] text-white shadow-[0_10px_20px_rgba(215,90,31,0.22)]">
-                Lusumpuko Woman&apos;s Club
+                Lusumpuko Women&apos;s Club
               </p>
             </div>
             <div className="hidden min-w-[240px] items-center gap-2 rounded-full border border-[#e8ddd0] bg-white/82 px-4 py-2 text-sm text-[#8b7c6f] md:flex">

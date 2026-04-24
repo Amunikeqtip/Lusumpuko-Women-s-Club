@@ -298,7 +298,7 @@ export default function Home() {
           <div className="flex flex-1 items-center justify-end gap-3 md:flex-none">
             <div className="text-right sm:hidden">
               <p className="inline-flex rounded-full border border-[#f2b38f] bg-[#d75a1f] px-3 py-1 text-[0.66rem] font-semibold uppercase tracking-[0.24em] text-white shadow-[0_10px_20px_rgba(215,90,31,0.22)]">
-                Lusumpuko Woman&apos;s Club
+                Lusumpuko Women&apos;s Club
               </p>
             </div>
             <form
