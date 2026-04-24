@@ -120,13 +120,18 @@ export default function RootsPage() {
           </nav>
 
           <div className="flex flex-1 items-center justify-end gap-3 md:flex-none">
+            <div className="text-right sm:hidden">
+              <p className="font-[family-name:var(--font-display)] text-sm leading-tight text-[#c74f19]">
+                Lusumpuko Woman&apos;s Club
+              </p>
+            </div>
             <div className="hidden min-w-[240px] items-center gap-2 rounded-full border border-[#e8ddd0] bg-white/82 px-4 py-2 text-sm text-[#8b7c6f] md:flex">
               <span className="text-base text-[#d05a1e]">⌕</span>
               <span>Search dishes...</span>
             </div>
             <Link
               href="/#order"
-              className="rounded-full bg-[#d75a1f] px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813]"
+              className="hidden rounded-full bg-[#d75a1f] px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813] md:inline-flex"
             >
               Order Online
             </Link>

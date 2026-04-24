@@ -49,7 +49,12 @@ export default function StoriesPage() {
             <Link href="/roots" className="rounded-full px-4 py-2 transition hover:bg-white/45 hover:text-[#2c211c]">Roots</Link>
             <Link href="/stories" className="rounded-full bg-[#d75a1f] px-4 py-2 text-white shadow-[0_10px_20px_rgba(215,90,31,0.2)] transition hover:bg-[#c64d14]">Explore</Link>
           </nav>
-          <a href="/contact" className="rounded-full bg-[#d75a1f] px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813]">Order Online</a>
+          <div className="text-right sm:hidden">
+            <p className="font-[family-name:var(--font-display)] text-sm leading-tight text-[#c74f19]">
+              Lusumpuko Woman&apos;s Club
+            </p>
+          </div>
+          <a href="/contact" className="hidden rounded-full bg-[#d75a1f] px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813] md:inline-flex">Order Online</a>
         </div>
       </header>
 

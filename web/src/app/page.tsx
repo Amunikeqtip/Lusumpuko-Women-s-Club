@@ -296,6 +296,11 @@ export default function Home() {
           </nav>
 
           <div className="flex flex-1 items-center justify-end gap-3 md:flex-none">
+            <div className="text-right sm:hidden">
+              <p className="font-[family-name:var(--font-display)] text-sm leading-tight text-[#c74f19]">
+                Lusumpuko Woman&apos;s Club
+              </p>
+            </div>
             <form
               onSubmit={(event) => {
                 event.preventDefault();
@@ -325,7 +330,7 @@ export default function Home() {
             </form>
             <a
               href="/contact"
-              className="rounded-full bg-[#d75a1f] px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813]"
+              className="hidden rounded-full bg-[#d75a1f] px-5 py-2 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813] md:inline-flex"
             >
               Order Online
             </a>
