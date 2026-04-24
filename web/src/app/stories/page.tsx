@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { SiteFooter } from "../../components/site-footer";
 import { SiteHeader } from "../../components/site-header";
 
 const testimonials = [
@@ -33,7 +34,7 @@ const stories = [
 export default function StoriesPage() {
   return (
     <main className="bg-[#fbf7f2] text-[#2a1c15]">
-      <SiteHeader />
+      <SiteHeader showDesktopSearchPlaceholder />
 
       <section
         className="pt-32"
@@ -83,6 +84,8 @@ export default function StoriesPage() {
           ))}
         </div>
       </section>
+
+      <SiteFooter />
     </main>
   );
 }

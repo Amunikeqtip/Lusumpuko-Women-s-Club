@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { SiteFooter } from "../../../components/site-footer";
+import { SiteHeader } from "../../../components/site-header";
 
 const tongaHighlights = [
   {
@@ -32,8 +34,10 @@ const tongaGallery = [
 export default function TongaPage() {
   return (
     <main className="bg-[#fbf7f2] text-[#2a1c15]">
+      <SiteHeader showDesktopSearchPlaceholder />
+
       <section
-        className="relative overflow-hidden px-6 pb-20 pt-28 sm:px-8 lg:px-12"
+        className="relative overflow-hidden px-6 pb-20 pt-36 sm:px-8 lg:px-12 lg:pt-40"
         style={{
           background:
             "linear-gradient(180deg, rgba(255,248,242,0.92), rgba(251,247,242,1))",
@@ -168,6 +172,8 @@ export default function TongaPage() {
           ))}
         </div>
       </section>
+
+      <SiteFooter />
     </main>
   );
 }

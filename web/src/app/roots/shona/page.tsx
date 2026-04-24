@@ -1,6 +1,8 @@
 "use client";
 
 import Link from "next/link";
+import { SiteFooter } from "../../../components/site-footer";
+import { SiteHeader } from "../../../components/site-header";
 
 const shonaThemes = [
   {
@@ -32,7 +34,9 @@ const shonaGallery = [
 export default function ShonaPage() {
   return (
     <main className="bg-[#fbf7f2] text-[#2a1c15]">
-      <section className="px-6 pb-20 pt-28 sm:px-8 lg:px-12">
+      <SiteHeader showDesktopSearchPlaceholder />
+
+      <section className="px-6 pb-20 pt-36 sm:px-8 lg:px-12 lg:pt-40">
         <div className="mx-auto max-w-6xl">
           <Link href="/roots" className="text-sm font-semibold text-[#d75a1f]">
             ← Back to Roots
@@ -159,6 +163,8 @@ export default function ShonaPage() {
           ))}
         </div>
       </section>
+
+      <SiteFooter />
     </main>
   );
 }

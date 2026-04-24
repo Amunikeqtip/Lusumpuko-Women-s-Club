@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { SiteFooter } from "../../../components/site-footer";
 import { SiteHeader } from "../../../components/site-header";
 
 const ingredients = [
@@ -72,7 +73,7 @@ const pairings = [
 export default function RecipePage() {
   return (
     <main className="bg-[#fbf7f2] text-[#2a1c15]">
-      <SiteHeader />
+      <SiteHeader showDesktopSearchPlaceholder />
 
       <section
         className="relative min-h-[420px] overflow-hidden pt-36"
@@ -242,6 +243,8 @@ export default function RecipePage() {
           ))}
         </div>
       </section>
+
+      <SiteFooter />
     </main>
   );
 }

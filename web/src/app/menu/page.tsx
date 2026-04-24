@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { SiteFooter } from "../../components/site-footer";
 import { SiteHeader } from "../../components/site-header";
 
 const traditionalPala = [
@@ -358,6 +359,8 @@ export default function MenuPage() {
           </a>
         </div>
       </section>
+
+      <SiteFooter />
     </main>
   );
 }
