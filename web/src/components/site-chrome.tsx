@@ -87,12 +87,12 @@ export function GlobalChrome() {
             <FiMail className="text-[1.15rem]" aria-hidden="true" />
           </a>
           <Link
-            href="/contact"
-            aria-label="Order online"
+            href="/donate"
+            aria-label="Donate to Lusumpuko Women's Club"
             className="inline-flex h-11 items-center gap-2 rounded-full bg-[#d75a1f] px-4 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813] hover:scale-105"
           >
             <FiArrowRight className="text-base" aria-hidden="true" />
-            <span>Order Now</span>
+            <span>Donate</span>
           </Link>
         </div>
       </div>

@@ -42,8 +42,7 @@ export default function ContactPage() {
 
   return (
     <main className="bg-[#fbf7f2] text-[#2a1c15]">
-      <SiteHeader showDesktopSearchPlaceholder />
-
+      <SiteHeader />
       <section className="mx-auto grid max-w-6xl gap-10 px-6 pb-20 pt-36 sm:px-8 lg:grid-cols-[1fr_0.95fr] lg:px-12 lg:pt-40">
         <div>
           <p className="inline-flex rounded-full border border-[#f0d7c7] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-[#cb5c22]">

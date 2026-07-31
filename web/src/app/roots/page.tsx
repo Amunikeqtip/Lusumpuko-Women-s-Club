@@ -66,8 +66,7 @@ const heritageMoments = [
 export default function RootsPage() {
   return (
     <main className="bg-[#fbf7f2] text-[#2a1c15]">
-      <SiteHeader showDesktopSearchPlaceholder />
-
+      <SiteHeader />
       <section className="mx-auto max-w-5xl px-6 pb-18 pt-36 text-center sm:px-8 lg:pt-40">
         <p className="inline-flex rounded-full border border-[#f1d1c2] px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-[#cb5c22]">
           Cultural Foundations

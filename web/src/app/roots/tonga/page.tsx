@@ -34,8 +34,7 @@ const tongaGallery = [
 export default function TongaPage() {
   return (
     <main className="bg-[#fbf7f2] text-[#2a1c15]">
-      <SiteHeader showDesktopSearchPlaceholder />
-
+      <SiteHeader />
       <section
         className="relative overflow-hidden px-6 pb-20 pt-36 sm:px-8 lg:px-12 lg:pt-40"
         style={{

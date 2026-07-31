@@ -34,8 +34,7 @@ const stories = [
 export default function StoriesPage() {
   return (
     <main className="bg-[#fbf7f2] text-[#2a1c15]">
-      <SiteHeader showDesktopSearchPlaceholder />
-
+      <SiteHeader />
       <section
         className="pt-32"
         style={{

@@ -34,8 +34,7 @@ const ndebeleGallery = [
 export default function NdebelePage() {
   return (
     <main className="bg-[#fbf7f2] text-[#2a1c15]">
-      <SiteHeader showDesktopSearchPlaceholder />
-
+      <SiteHeader />
       <section className="px-6 pb-20 pt-36 sm:px-8 lg:px-12 lg:pt-40">
         <div className="mx-auto max-w-6xl">
           <Link href="/roots" className="text-sm font-semibold text-[#d75a1f]">

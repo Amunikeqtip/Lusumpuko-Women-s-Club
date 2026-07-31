@@ -75,7 +75,31 @@ The root `package.json` proxies to the `web` workspace:
 - `web/next.config.ts` - Next.js configuration
 - `web/src/app/globals.css` - Global styling and Tailwind theme setup
 
+## Donations (Paynow)
+
+Create `web/.env.local` with your Paynow credentials when ready:
+
+```bash
+PAYNOW_INTEGRATION_ID=your_integration_id
+PAYNOW_INTEGRATION_KEY=your_integration_key
+NEXT_PUBLIC_SITE_URL=http://localhost:3000
+
+# Email delivery (Resend) — required to actually send donation emails
+RESEND_API_KEY=re_xxxxxxxxx
+EMAIL_FROM="Lusumpuko Women's Club <hello@lusumpukopala.com>"
+
+# Owner alert recipients (comma-separated). Defaults to hello@lusumpukopala.com
+DONATION_OWNER_EMAIL=hello@lusumpukopala.com
+```
+
+`NEXT_PUBLIC_SITE_URL` should be your public site origin in production so Paynow return/result URLs resolve correctly.
+
+When Paynow confirms a paid donation:
+- the donor receives a thank-you email
+- owners receive an alert with the amount, donor name, and donor email
+
 ## Notes
 
 - This app uses the Next.js App Router.
 - Remote imagery is used in the page backgrounds, so the site is visual-first and image-heavy by design.
+- The floating Donate button opens `/donate`, which initiates Paynow checkout via `/api/donate`.

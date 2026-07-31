@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useEffect, useState } from "react";
 import { SiteFooter } from "../components/site-footer";
 import { SiteHeader } from "../components/site-header";
 
@@ -58,51 +57,6 @@ const testimonials = [
   },
 ];
 
-const dishCatalog = [
-  {
-    name: "Traditional Ndebele Pala",
-    description:
-      "Slow-cooked heritage grains, tender protein, seasonal greens, and our signature chili reduction.",
-    category: "Signature Plate",
-    price: "$12.00",
-  },
-  {
-    name: "White Sadza with Braai",
-    description:
-      "A hearty Zimbabwean staple served with braai and bright garden salads.",
-    category: "Main Dish",
-    price: "$10.50",
-  },
-  {
-    name: "Stewed Kapenta and Sadza",
-    description:
-      "A comforting plate of stewed kapenta, tomato gravy, and hand-finished sadza.",
-    category: "Traditional Favorite",
-    price: "$11.00",
-  },
-  {
-    name: "Sadza and Beans",
-    description:
-      "Creamy slow-simmered beans paired with soft sadza and house spices.",
-    category: "Vegetarian",
-    price: "$8.50",
-  },
-  {
-    name: "Peanut Leaf Relish Bowl",
-    description:
-      "Leafy greens cooked in a rich peanut sauce, finished with warm traditional seasoning.",
-    category: "Sides & Bowls",
-    price: "$7.50",
-  },
-  {
-    name: "Shona Heritage Feast",
-    description:
-      "A celebratory selection of sadza, grilled meats, stews, and seasonal vegetables.",
-    category: "Family Platter",
-    price: "$23.00",
-  },
-];
-
 const gramTiles = [
   "url('https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20meal.jpg')",
   "url('https://commons.wikimedia.org/wiki/Special:FilePath/Zimbabwe%20Traditionalfood.jpg')",
@@ -135,147 +89,9 @@ function SectionLabel({ children }: { children: React.ReactNode }) {
 }
 
 export default function Home() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
-
-  const normalizedQuery = searchQuery.trim().toLowerCase();
-  const searchResults = normalizedQuery
-    ? dishCatalog.filter((dish) =>
-        `${dish.name} ${dish.description} ${dish.category}`
-          .toLowerCase()
-          .includes(normalizedQuery),
-      )
-    : [];
-
-  useEffect(() => {
-    if (!isSearchOpen) {
-      return;
-    }
-
-    const handleKeyDown = (event: KeyboardEvent) => {
-      if (event.key === "Escape") {
-        setIsSearchOpen(false);
-      }
-    };
-
-    window.addEventListener("keydown", handleKeyDown);
-    return () => window.removeEventListener("keydown", handleKeyDown);
-  }, [isSearchOpen]);
-
   return (
     <main className="relative isolate bg-[#f7f0e8] text-[#2f241d]">
-      {isSearchOpen ? (
-        <div className="fixed inset-0 z-[1200] flex items-start justify-center bg-[rgba(27,17,11,0.55)] px-4 pb-6 pt-28 backdrop-blur-sm sm:px-6">
-          <div className="w-full max-w-3xl overflow-hidden rounded-[2rem] border border-white/35 bg-[#fff8f2] shadow-[0_30px_90px_rgba(33,20,11,0.28)]">
-            <div className="flex items-center justify-between border-b border-[#efdfd1] px-6 py-5">
-              <div>
-                <p className="text-xs font-semibold uppercase tracking-[0.3em] text-[#af8d79]">
-                  Search Results
-                </p>
-                <h2 className="mt-1 font-[family-name:var(--font-display)] text-3xl text-[#2a1c15]">
-                  {normalizedQuery
-                    ? `Results for "${searchQuery.trim()}"`
-                    : "Find a dish"}
-                </h2>
-              </div>
-              <button
-                type="button"
-                onClick={() => setIsSearchOpen(false)}
-                className="flex h-11 w-11 items-center justify-center rounded-full border border-[#ead7c7] text-[#7d6657] transition hover:bg-white"
-                aria-label="Close search results"
-              >
-                ✕
-              </button>
-            </div>
-
-            <div className="max-h-[65vh] overflow-y-auto px-6 py-6">
-              {normalizedQuery ? (
-                searchResults.length > 0 ? (
-                  <div className="grid gap-4">
-                    {searchResults.map((dish) => (
-                      <article
-                        key={dish.name}
-                        className="rounded-[1.5rem] border border-[#efdfd1] bg-white px-5 py-5 shadow-[0_14px_35px_rgba(68,35,12,0.06)]"
-                      >
-                        <div className="flex flex-wrap items-start justify-between gap-4">
-                          <div className="max-w-2xl">
-                            <p className="text-xs font-semibold uppercase tracking-[0.28em] text-[#cc5f28]">
-                              {dish.category}
-                            </p>
-                            <h3 className="mt-2 font-[family-name:var(--font-display)] text-2xl text-[#241711]">
-                              {dish.name}
-                            </h3>
-                            <p className="mt-3 text-sm leading-7 text-[#66564b]">
-                              {dish.description}
-                            </p>
-                          </div>
-                          <p className="font-[family-name:var(--font-display)] text-2xl text-[#d75a1f]">
-                            {dish.price}
-                          </p>
-                        </div>
-                      </article>
-                    ))}
-                  </div>
-                ) : (
-                  <div className="rounded-[1.5rem] border border-dashed border-[#e7d5c6] bg-white/70 px-6 py-10 text-center">
-                    <p className="font-[family-name:var(--font-display)] text-3xl text-[#2a1b14]">
-                      No dishes found
-                    </p>
-                    <p className="mt-3 text-sm leading-7 text-[#76665a]">
-                      Try searching for terms like sadza, pala, beans, braai,
-                      or feast.
-                    </p>
-                  </div>
-                )
-              ) : (
-                <div className="rounded-[1.5rem] border border-dashed border-[#e7d5c6] bg-white/70 px-6 py-10 text-center">
-                  <p className="font-[family-name:var(--font-display)] text-3xl text-[#2a1b14]">
-                    Start typing a dish
-                  </p>
-                  <p className="mt-3 text-sm leading-7 text-[#76665a]">
-                    Search the menu for traditional plates, sides, and family
-                    platters.
-                  </p>
-                </div>
-              )}
-            </div>
-          </div>
-        </div>
-      ) : null}
-
-      <SiteHeader
-        homeHref="#home"
-        variant="home"
-        desktopSearchSlot={
-          <form
-            onSubmit={(event) => {
-              event.preventDefault();
-              setIsSearchOpen(true);
-            }}
-            className="hidden min-w-[270px] items-center gap-2 rounded-full border border-[#e8ddd0] bg-white/82 px-3 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] md:flex"
-          >
-            <span className="pl-1 text-base text-[#d05a1e]">⌕</span>
-            <input
-              type="search"
-              value={searchQuery}
-              onFocus={() => setIsSearchOpen(true)}
-              onChange={(event) => {
-                setSearchQuery(event.target.value);
-                setIsSearchOpen(true);
-              }}
-              placeholder="Search dishes..."
-              className="w-full bg-transparent text-sm text-[#5f5045] outline-none placeholder:text-[#9a887a]"
-              aria-label="Search dishes"
-            />
-            <button
-              type="submit"
-              className="rounded-full bg-[#f8eee5] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#c45a24] transition hover:bg-[#f3e1d2]"
-            >
-              Find
-            </button>
-          </form>
-        }
-      />
+      <SiteHeader homeHref="#home" variant="home" />
 
       <section className="relative isolate overflow-hidden">
         <div className="absolute inset-0" style={heroBackgroundStyle} />

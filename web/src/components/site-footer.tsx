@@ -6,7 +6,7 @@ type SiteFooterProps = {
 };
 
 const footerLinkClassName =
-  "group inline-flex items-center gap-2 rounded-full px-2 py-1 -mx-2 text-[#47392f] underline decoration-[#d8b39d] underline-offset-4 transition duration-200 hover:bg-[#fff1e8] hover:text-[#d75a1f] hover:decoration-[#d75a1f]";
+  "inline-flex rounded-full px-2 py-1 -mx-2 text-[#47392f] underline decoration-[#d8b39d] underline-offset-4 transition duration-200 hover:bg-[#fff1e8] hover:text-[#d75a1f] hover:decoration-[#d75a1f]";
 
 const legalLinkClassName =
   "inline-flex rounded-full px-2 py-1 -mx-2 text-[#8f7868] underline decoration-[#d9c2b3] underline-offset-4 transition hover:bg-[#fff1e8] hover:text-[#d75a1f] hover:decoration-[#d75a1f]";
@@ -53,25 +53,16 @@ export function SiteFooter({
               <li>
                 <Link href="/about" className={footerLinkClassName}>
                   About Our History
-                  <span aria-hidden="true" className="text-[0.7rem] transition group-hover:translate-x-0.5">
-                    ↗
-                  </span>
                 </Link>
               </li>
               <li>
                 <Link href="/roots" className={footerLinkClassName}>
                   Cultural Traditions
-                  <span aria-hidden="true" className="text-[0.7rem] transition group-hover:translate-x-0.5">
-                    ↗
-                  </span>
                 </Link>
               </li>
               <li>
                 <Link href="/menu" className={footerLinkClassName}>
                   Full Menu
-                  <span aria-hidden="true" className="text-[0.7rem] transition group-hover:translate-x-0.5">
-                    ↗
-                  </span>
                 </Link>
               </li>
               <li>
@@ -80,17 +71,11 @@ export function SiteFooter({
                   className={footerLinkClassName}
                 >
                   Home Recipes
-                  <span aria-hidden="true" className="text-[0.7rem] transition group-hover:translate-x-0.5">
-                    ↗
-                  </span>
                 </Link>
               </li>
               <li>
                 <Link href="/stories" className={footerLinkClassName}>
                   Visual Gallery
-                  <span aria-hidden="true" className="text-[0.7rem] transition group-hover:translate-x-0.5">
-                    ↗
-                  </span>
                 </Link>
               </li>
             </ul>
@@ -102,35 +87,28 @@ export function SiteFooter({
             </h3>
             <ul className="mt-4 space-y-3 text-sm text-[#54463b]">
               <li>
+                <Link href="/impact" className={footerLinkClassName}>
+                  Our Giving &amp; Impact
+                </Link>
+              </li>
+              <li>
                 <Link href="/stories" className={footerLinkClassName}>
                   Customer Testimonials
-                  <span aria-hidden="true" className="text-[0.7rem] transition group-hover:translate-x-0.5">
-                    ↗
-                  </span>
                 </Link>
               </li>
               <li>
                 <Link href="/stories" className={footerLinkClassName}>
                   Latest News &amp; Blog
-                  <span aria-hidden="true" className="text-[0.7rem] transition group-hover:translate-x-0.5">
-                    ↗
-                  </span>
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className={footerLinkClassName}>
                   Ordering Support
-                  <span aria-hidden="true" className="text-[0.7rem] transition group-hover:translate-x-0.5">
-                    ↗
-                  </span>
                 </Link>
               </li>
               <li>
                 <Link href="/contact" className={footerLinkClassName}>
                   Contact Us
-                  <span aria-hidden="true" className="text-[0.7rem] transition group-hover:translate-x-0.5">
-                    ↗
-                  </span>
                 </Link>
               </li>
             </ul>

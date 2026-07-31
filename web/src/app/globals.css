@@ -44,3 +44,30 @@ button {
   background: rgba(215, 90, 31, 0.2);
   color: #20120d;
 }
+
+@keyframes impact-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.impact-fade-up {
+  animation: impact-fade-up 0.9s ease both;
+}
+
+.impact-delay-1 {
+  animation-delay: 0.12s;
+}
+
+.impact-delay-2 {
+  animation-delay: 0.24s;
+}
+
+.impact-delay-3 {
+  animation-delay: 0.36s;
+}

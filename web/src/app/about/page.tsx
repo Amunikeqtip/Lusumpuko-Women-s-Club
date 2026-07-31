@@ -77,8 +77,7 @@ const values = [
 export default function AboutPage() {
   return (
     <main className="bg-[#fbf7f2] text-[#2a1c15]">
-      <SiteHeader showDesktopSearchPlaceholder />
-
+      <SiteHeader />
       <section className="mx-auto max-w-6xl px-6 pb-20 pt-36 sm:px-8 lg:px-12 lg:pt-40">
         <div className="grid gap-12 lg:grid-cols-[1.05fr_1fr] lg:items-center">
           <div className="relative">

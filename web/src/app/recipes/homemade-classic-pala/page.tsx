@@ -73,8 +73,7 @@ const pairings = [
 export default function RecipePage() {
   return (
     <main className="bg-[#fbf7f2] text-[#2a1c15]">
-      <SiteHeader showDesktopSearchPlaceholder />
-
+      <SiteHeader />
       <section
         className="relative min-h-[420px] overflow-hidden pt-36"
         style={{

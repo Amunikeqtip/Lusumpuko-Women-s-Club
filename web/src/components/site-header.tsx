@@ -2,13 +2,10 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
-import { useEffect, useState, type ReactNode } from "react";
+import { usePathname } from "next/navigation";
 
 type SiteHeaderProps = {
-  desktopSearchSlot?: ReactNode;
   homeHref?: string;
-  showDesktopSearchPlaceholder?: boolean;
   variant?: "default" | "home";
 };
 
@@ -17,6 +14,7 @@ const navItems = [
   { href: "/about", key: "about", label: "About" },
   { href: "/menu", key: "menu", label: "Menu" },
   { href: "/roots", key: "roots", label: "Roots" },
+  { href: "/impact", key: "impact", label: "Impact" },
   { href: "/stories", key: "stories", label: "Explore" },
 ] as const;
 
@@ -29,38 +27,14 @@ function isActivePath(pathname: string, key: (typeof navItems)[number]["key"]) {
 }
 
 export function SiteHeader({
-  desktopSearchSlot,
   homeHref = "/",
-  showDesktopSearchPlaceholder = false,
   variant = "default",
 }: SiteHeaderProps) {
   const pathname = usePathname();
-  const router = useRouter();
-  const [searchValue, setSearchValue] = useState("");
   const headerClassName =
     variant === "home"
       ? "fixed left-1/2 top-4 z-[999] w-[calc(100%-2rem)] max-w-[1320px] -translate-x-1/2 rounded-full border border-white/35 bg-[linear-gradient(135deg,rgba(255,250,244,0.62),rgba(255,244,236,0.28))] px-4 py-3 shadow-[0_18px_55px_rgba(53,32,14,0.18)] backdrop-blur-xl supports-[backdrop-filter]:bg-[linear-gradient(135deg,rgba(255,250,244,0.52),rgba(255,244,236,0.18))] max-sm:top-3 max-sm:w-[calc(100%-1rem)] max-sm:rounded-[1.6rem] max-sm:border-[#f1c2a2] max-sm:bg-[linear-gradient(135deg,rgba(255,248,242,0.98),rgba(255,231,216,0.92))] max-sm:px-3 max-sm:py-2.5 max-sm:shadow-[0_20px_55px_rgba(75,32,12,0.16)] md:w-[calc(100%-3rem)] md:px-6 lg:w-[calc(100%-5rem)]"
       : "fixed left-1/2 top-4 z-[999] w-[calc(100%-2rem)] max-w-[1320px] -translate-x-1/2 rounded-full border border-white/35 bg-[linear-gradient(135deg,rgba(255,250,244,0.72),rgba(255,244,236,0.34))] px-4 py-3 shadow-[0_18px_55px_rgba(53,32,14,0.18)] backdrop-blur-xl max-sm:top-3 max-sm:w-[calc(100%-1rem)] max-sm:rounded-[1.6rem] max-sm:border-[#f1c2a2] max-sm:bg-[linear-gradient(135deg,rgba(255,248,242,0.98),rgba(255,231,216,0.92))] max-sm:px-3 max-sm:py-2.5 max-sm:shadow-[0_20px_55px_rgba(75,32,12,0.16)] md:w-[calc(100%-3rem)] md:px-6 lg:w-[calc(100%-5rem)]";
-
-  useEffect(() => {
-    const nextSearchValue =
-      typeof window === "undefined"
-        ? ""
-        : new URLSearchParams(window.location.search).get("q") ?? "";
-
-    setSearchValue((currentValue) =>
-      currentValue === nextSearchValue ? currentValue : nextSearchValue,
-    );
-  });
-
-  const submitSearch = () => {
-    const trimmedQuery = searchValue.trim();
-    const target = trimmedQuery
-      ? `/menu?q=${encodeURIComponent(trimmedQuery)}`
-      : "/menu";
-
-    router.push(target);
-  };
 
   return (
     <header className={headerClassName}>
@@ -94,7 +68,7 @@ export function SiteHeader({
               <Link
                 key={item.key}
                 href={href}
-                className={`rounded-full px-4 py-2 transition ${
+                className={`rounded-full px-3 py-2 transition xl:px-4 ${
                   active
                     ? "bg-[#d75a1f] text-white shadow-[0_10px_20px_rgba(215,90,31,0.2)] hover:bg-[#c64d14]"
                     : "hover:bg-white/45 hover:text-[#2c211c]"
@@ -105,37 +79,6 @@ export function SiteHeader({
             );
           })}
         </nav>
-
-        {(desktopSearchSlot || showDesktopSearchPlaceholder) && (
-          <div className="flex flex-1 items-center justify-end gap-3 md:flex-none">
-            {desktopSearchSlot}
-            {!desktopSearchSlot && showDesktopSearchPlaceholder && (
-              <form
-                onSubmit={(event) => {
-                  event.preventDefault();
-                  submitSearch();
-                }}
-                className="hidden min-w-[240px] items-center gap-2 rounded-full border border-[#e8ddd0] bg-white/82 px-3 py-2 shadow-[inset_0_1px_0_rgba(255,255,255,0.6)] md:flex"
-              >
-                <span className="pl-1 text-base text-[#d05a1e]">⌕</span>
-                <input
-                  type="search"
-                  value={searchValue}
-                  onChange={(event) => setSearchValue(event.target.value)}
-                  placeholder="Search dishes..."
-                  className="w-full bg-transparent text-sm text-[#5f5045] outline-none placeholder:text-[#9a887a]"
-                  aria-label="Search dishes"
-                />
-                <button
-                  type="submit"
-                  className="rounded-full bg-[#f8eee5] px-3 py-1 text-xs font-semibold uppercase tracking-[0.2em] text-[#c45a24] transition hover:bg-[#f3e1d2]"
-                >
-                  Find
-                </button>
-              </form>
-            )}
-          </div>
-        )}
       </div>
     </header>
   );

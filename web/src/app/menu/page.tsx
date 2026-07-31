@@ -260,8 +260,7 @@ export default function MenuPage() {
 
   return (
     <main className="bg-[#fbf7f2] text-[#2a1c15]">
-      <SiteHeader showDesktopSearchPlaceholder />
-
+      <SiteHeader />
       <section className="mx-auto max-w-6xl px-6 pb-10 pt-36 sm:px-8 lg:px-12 lg:pt-40">
         <div className="relative overflow-hidden rounded-[2rem] border border-[#efe0d5] bg-[linear-gradient(135deg,#fff6f0,#fffdfb)] px-8 py-14 shadow-[0_18px_45px_rgba(60,31,12,0.05)]">
           <div className="absolute right-0 top-0 h-full w-[28rem] bg-[radial-gradient(circle_at_center,rgba(218,108,52,0.08),transparent_45%)]" />
