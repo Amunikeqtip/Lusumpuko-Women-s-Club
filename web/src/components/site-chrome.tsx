@@ -5,7 +5,6 @@ import { usePathname } from "next/navigation";
 import type { ComponentType } from "react";
 import { FaWhatsapp } from "react-icons/fa";
 import {
-  FiArrowRight,
   FiHome,
   FiInfo,
   FiMail,
@@ -13,6 +12,7 @@ import {
   FiMenu,
   FiMessageCircle,
 } from "react-icons/fi";
+import { getPayPalPaymentLink } from "../lib/paypal-config";
 
 type NavItem = {
   href: string;
@@ -38,6 +38,7 @@ function isActive(pathname: string, href: string) {
 
 export function GlobalChrome() {
   const pathname = usePathname();
+  const paypalPaymentLink = getPayPalPaymentLink();
 
   return (
     <>
@@ -86,14 +87,20 @@ export function GlobalChrome() {
           >
             <FiMail className="text-[1.15rem]" aria-hidden="true" />
           </a>
-          <Link
-            href="/donate"
-            aria-label="Donate to Lusumpuko Women's Club"
-            className="inline-flex h-11 items-center gap-2 rounded-full bg-[#d75a1f] px-4 text-sm font-semibold text-white shadow-[0_12px_24px_rgba(215,90,31,0.28)] transition hover:bg-[#bc4813] hover:scale-105"
+          <form
+            action={paypalPaymentLink}
+            method="post"
+            target="_blank"
+            className="m-0"
           >
-            <FiArrowRight className="text-base" aria-hidden="true" />
-            <span>Donate</span>
-          </Link>
+            <button
+              type="submit"
+              aria-label="Donate with PayPal"
+              className="inline-flex h-11 items-center justify-center rounded-full bg-[#FFD140] px-5 text-sm font-bold text-black shadow-[0_12px_24px_rgba(0,0,0,0.12)] transition hover:bg-[#f0c230] hover:scale-105"
+            >
+              Donate
+            </button>
+          </form>
         </div>
       </div>
     </>

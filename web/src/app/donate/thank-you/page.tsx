@@ -22,9 +22,8 @@ export default function DonateThankYouPage() {
             <span className="text-[#d75a1f] italic">the world</span>
           </h1>
           <p className="mx-auto mt-6 max-w-xl text-base leading-8 text-[#706055]">
-            If your Paynow payment completed successfully, we have received your
-            donation. A confirmation may also appear in your Paynow account or
-            email.
+            If your PayPal payment completed successfully, we have received your
+            donation. A confirmation may also appear in your email.
           </p>
 
           <div className="mt-10 flex flex-wrap items-center justify-center gap-3">

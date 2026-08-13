@@ -75,31 +75,31 @@ The root `package.json` proxies to the `web` workspace:
 - `web/next.config.ts` - Next.js configuration
 - `web/src/app/globals.css` - Global styling and Tailwind theme setup
 
-## Donations (Paynow)
+## Donations (PayPal)
 
-Create `web/.env.local` with your Paynow credentials when ready:
+The donate page uses the same hosted PayPal section as Delight Tours:
+stacked buttons, QR code, and payment link — all pointing to one secure checkout.
+
+Copy `web/.env.example` to `web/.env.local` and fill in:
 
 ```bash
-PAYNOW_INTEGRATION_ID=your_integration_id
-PAYNOW_INTEGRATION_KEY=your_integration_key
 NEXT_PUBLIC_SITE_URL=http://localhost:3000
 
-# Email delivery (Resend) — required to actually send donation emails
-RESEND_API_KEY=re_xxxxxxxxx
-EMAIL_FROM="Lusumpuko Women's Club <hello@lusumpukopala.com>"
+# Hosted Buttons / NCP (required for /donate)
+NEXT_PUBLIC_PAYPAL_HOSTED_CLIENT_ID=your_hosted_buttons_client_id
+NEXT_PUBLIC_PAYPAL_HOSTED_BUTTON_ID=your_hosted_button_id
+NEXT_PUBLIC_PAYPAL_PAYMENT_LINK=https://www.paypal.com/ncp/payment/your_button_id
 
-# Owner alert recipients (comma-separated). Defaults to hello@lusumpukopala.com
+EMAIL_HOST=smtp.example.com
+EMAIL_USERNAME=noreply@example.com
+EMAIL_PASSWORD=your_smtp_password
+EMAIL_PORT=587
+EMAIL_FROM="Lusumpuko Women's Club <noreply@example.com>"
 DONATION_OWNER_EMAIL=hello@lusumpukopala.com
 ```
-
-`NEXT_PUBLIC_SITE_URL` should be your public site origin in production so Paynow return/result URLs resolve correctly.
-
-When Paynow confirms a paid donation:
-- the donor receives a thank-you email
-- owners receive an alert with the amount, donor name, and donor email
 
 ## Notes
 
 - This app uses the Next.js App Router.
 - Remote imagery is used in the page backgrounds, so the site is visual-first and image-heavy by design.
-- The floating Donate button opens `/donate`, which initiates Paynow checkout via `/api/donate`.
+- The floating Donate button opens `/donate` with the three PayPal checkout options.
