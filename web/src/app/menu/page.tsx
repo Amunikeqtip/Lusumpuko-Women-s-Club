@@ -6,54 +6,49 @@ import { useRouter } from "next/navigation";
 import { useEffect, useState } from "react";
 import { SiteFooter } from "../../components/site-footer";
 import { SiteHeader } from "../../components/site-header";
+import { LWC } from "../../lib/lusumpuko-images";
 
 const traditionalPala = [
   {
     title: "Zambezi River Pala",
     price: "$18.50",
     tag: "Tonga",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/A%20plate%20of%20sadza.jpg",
+    image: LWC.foodSadzaMeat,
     description: "The original Tonga recipe prepared with sun-dried fish and millet grain.",
   },
   {
     title: "Royal Ndebele Platter",
     price: "$22.00",
     tag: "Ndebele",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Zimbabwe%20Traditionalfood.jpg",
+    image: LWC.foodMopaneSadza,
     description: "A celebratory Pala dish in beef marrow and slow-cooked greens.",
   },
   {
     title: "Eastern Highlands Pala",
     price: "$16.50",
     tag: "Shona",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20meal.jpg",
+    image: LWC.foodGreensBowl,
     description: "Stone-steamed preparation featuring forest mushrooms and finger millet.",
   },
   {
     title: "Mosi-oa-Tunya Special",
     price: "$19.50",
     tag: "Tonga",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/White%20sadza%2C%20braai%20and%20salads.jpg",
+    image: LWC.foodBreakfastTray,
     description: "Named after the mighty falls, with river herbs, zingi, and robust relish.",
   },
   {
     title: "Matobo Heritage Bowl",
     price: "$17.00",
     tag: "Ndebele",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Sadza%20and%20Beans.jpg",
+    image: LWC.foodHarvestBasket,
     description: "Centuries-old recipe using grain stone in traditional clay granaries.",
   },
   {
     title: "Great Zimbabwe Pala",
     price: "$21.00",
     tag: "Shona",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Stewed%20Capenta%20and%20Sadza%28as%20it%20is%20known%20in%20Zimbabwe%29%20dish.JPG",
+    image: LWC.foodSadzaMeat,
     description: "Bold and enduring flavor profile with cured meats and firm texture.",
   },
 ];
@@ -62,43 +57,37 @@ const chefsVariations = [
   {
     title: "Spiced Fusion Pala",
     price: "$24.00",
-    image:
-      "https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1200&q=80",
+    image: LWC.foodMopaneSadza,
     description: "A modern interpretation where Cape Malay spices and aromatic basil blend.",
   },
   {
     title: "Seafood Symphony Pala",
     price: "$29.50",
-    image:
-      "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=80",
+    image: LWC.foodBreakfastTray,
     description: "Luxury variation with grilled prawns and calamari in a light Pala base.",
   },
   {
     title: "Vegetarian Oasis",
     price: "$16.00",
-    image:
-      "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=80",
+    image: LWC.foodGreensBowl,
     description: "Garden-fresh variation with roasted butternut and toasted pumpkin seeds.",
   },
   {
     title: "Smoky Highland Venison",
     price: "$26.00",
-    image:
-      "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1200&q=80",
+    image: LWC.foodSadzaMeat,
     description: "Game-meat variation using traditional smoking techniques with oak wood.",
   },
   {
     title: "Chili-Ginger Kick",
     price: "$19.00",
-    image:
-      "https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1200&q=80",
+    image: LWC.foodPumpkinLeaves,
     description: "A bold, contemporary version for those who enjoy heat and zest.",
   },
   {
     title: "Nutty Protein Power",
     price: "$20.00",
-    image:
-      "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=1200&q=80",
+    image: LWC.foodHarvestBasket,
     description: "High-energy version with crushed nuts and high-protein local pulses.",
   },
 ];
@@ -110,26 +99,22 @@ const sidesAndDrinks = [
       {
         title: "Crispy Okra Fries",
         price: "$6.50",
-        image:
-          "https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?auto=format&fit=crop&w=1200&q=80",
+        image: LWC.foodPumpkinLeaves,
       },
       {
         title: "Sweet Potato Mash",
         price: "$5.50",
-        image:
-          "https://images.unsplash.com/photo-1543332164-6e82f355badc?auto=format&fit=crop&w=1200&q=80",
+        image: LWC.foodBreakfastTray,
       },
       {
         title: "Traditional Relish",
         price: "$4.00",
-        image:
-          "https://images.unsplash.com/photo-1464965911861-746a04b4bca6?auto=format&fit=crop&w=1200&q=80",
+        image: LWC.foodGreensBowl,
       },
       {
         title: "Grilled Maize Cob",
         price: "$4.50",
-        image:
-          "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1200&q=80",
+        image: LWC.foodHarvestBasket,
       },
     ],
   },
@@ -139,20 +124,17 @@ const sidesAndDrinks = [
       {
         title: "Baobab Breeze",
         price: "$5.00",
-        image:
-          "https://images.unsplash.com/photo-1513558161293-cdaf765ed2fd?auto=format&fit=crop&w=1200&q=80",
+        image: LWC.foodBreakfastTray,
       },
       {
         title: "Mazoe Gold Cooler",
         price: "$4.50",
-        image:
-          "https://images.unsplash.com/photo-1499638673689-79a0b5115d87?auto=format&fit=crop&w=1200&q=80",
+        image: LWC.foodGardenGreens,
       },
       {
         title: "Rooibos Iced Tea",
         price: "$5.50",
-        image:
-          "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
+        image: LWC.foodGardenPlot,
       },
     ],
   },
@@ -200,10 +182,10 @@ function MenuCard({
             View Details →
           </a>
           <a
-            href="/recipes/homemade-classic-pala"
+            href="/contact"
             className="rounded-full border border-[#ead8ca] px-3 py-1.5 font-semibold text-[#6a594d] transition hover:bg-[#fff4eb]"
           >
-            + Order
+            Contact Us
           </a>
         </div>
       </div>
@@ -442,8 +424,8 @@ export default function MenuPage() {
           <div className="mt-6 space-y-4">
             {[
               "What is the 'Pala' base made of?",
-              "Can I customize my spice level?",
-              "Do you offer large group catering?",
+              "Can we book you for a private gathering?",
+              "How do we book a gathering with you?",
             ].map((question) => (
               <div key={question} className="rounded-[1rem] border border-[#eee2d7] bg-white px-5 py-4">
                 <p className="font-semibold text-[#241711]">{question}</p>

@@ -1,6 +1,6 @@
 export const clubContact = {
   providerName: "Lusumpuko Women's Club",
-  email: "hello@lusumpukopala.com",
+  email: "info@lusumpuko.com",
   phone: "+263 77677288",
   address: "Victoria Falls, Zimbabwe",
   website: process.env.NEXT_PUBLIC_SITE_URL?.replace(/\/$/, "") || "https://lusumpukopala.com",

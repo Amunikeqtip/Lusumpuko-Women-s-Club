@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { SiteFooter } from "../../../components/site-footer";
 import { SiteHeader } from "../../../components/site-header";
+import { LWC } from "../../../lib/lusumpuko-images";
 
 const shonaThemes = [
   {
@@ -26,9 +27,9 @@ const shonaRelevance = [
 ];
 
 const shonaGallery = [
-  "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20meal.jpg",
-  "https://commons.wikimedia.org/wiki/Special:FilePath/Stewed%20Capenta%20and%20Sadza%28as%20it%20is%20known%20in%20Zimbabwe%29%20dish.JPG",
-  "https://commons.wikimedia.org/wiki/Special:FilePath/Sadza%20and%20Beans.jpg",
+  LWC.foodSadzaMeat,
+  LWC.foodGardenPlot,
+  LWC.foodPumpkinLeaves,
 ];
 
 export default function ShonaPage() {
@@ -62,8 +63,7 @@ export default function ShonaPage() {
             <div
               className="min-h-[430px] overflow-hidden rounded-[2rem] border border-[#efe1d6] bg-white shadow-[0_24px_60px_rgba(59,31,12,0.08)]"
               style={{
-                backgroundImage:
-                  "url('https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20meal.jpg')",
+                backgroundImage: `url('${LWC.womenVillage}')`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}

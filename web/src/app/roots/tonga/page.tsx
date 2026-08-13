@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { SiteFooter } from "../../../components/site-footer";
 import { SiteHeader } from "../../../components/site-header";
+import { LWC } from "../../../lib/lusumpuko-images";
 
 const tongaHighlights = [
   {
@@ -26,9 +27,9 @@ const tongaToday = [
 ];
 
 const tongaGallery = [
-  "https://planeterra.org/wp-content/uploads/2020/07/26.png",
-  "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20meal.jpg",
-  "https://commons.wikimedia.org/wiki/Special:FilePath/White%20sadza%2C%20braai%20and%20salads.jpg",
+  LWC.foodBreakfastTray,
+  LWC.foodSadzaMeat,
+  LWC.foodHarvestBasket,
 ];
 
 export default function TongaPage() {
@@ -69,8 +70,7 @@ export default function TongaPage() {
             <div
               className="min-h-[420px] overflow-hidden rounded-[2rem] border border-[#efe1d6] bg-white shadow-[0_24px_60px_rgba(59,31,12,0.08)]"
               style={{
-                backgroundImage:
-                  "url('https://planeterra.org/wp-content/uploads/2020/07/26.png')",
+                backgroundImage: `url('${LWC.womenGardenMortar}')`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}

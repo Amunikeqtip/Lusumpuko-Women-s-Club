@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { SiteFooter } from "../../../components/site-footer";
 import { SiteHeader } from "../../../components/site-header";
+import { LWC } from "../../../lib/lusumpuko-images";
 
 const ndebeleThemes = [
   {
@@ -26,9 +27,9 @@ const ndebeleRelevance = [
 ];
 
 const ndebeleGallery = [
-  "https://commons.wikimedia.org/wiki/Special:FilePath/A%20plate%20of%20sadza.jpg",
-  "https://commons.wikimedia.org/wiki/Special:FilePath/Zimbabwe%20Traditionalfood.jpg",
-  "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=80",
+  LWC.foodMopaneSadza,
+  LWC.foodGreensBowl,
+  LWC.foodSadzaMeat,
 ];
 
 export default function NdebelePage() {
@@ -45,8 +46,7 @@ export default function NdebelePage() {
             <div
               className="min-h-[430px] overflow-hidden rounded-[2rem] border border-[#efe1d6] bg-white shadow-[0_24px_60px_rgba(59,31,12,0.08)]"
               style={{
-                backgroundImage:
-                  "url('https://commons.wikimedia.org/wiki/Special:FilePath/A%20plate%20of%20sadza.jpg')",
+                backgroundImage: `url('${LWC.womenBlueUniforms}')`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}

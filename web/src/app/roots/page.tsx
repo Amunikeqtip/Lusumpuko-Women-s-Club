@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SiteFooter } from "../../components/site-footer";
 import { SiteHeader } from "../../components/site-header";
+import { LWC } from "../../lib/lusumpuko-images";
 
 const pillars = [
   { label: "Ancient Roots", value: "Tonga" },
@@ -19,8 +20,7 @@ const heritageSections = [
       "Traditionally, the Tonga people utilize indigenous Mabele sorghum varieties that thrive in the heat of the valley. Their technique involves a unique double-fermentation process that gives the dish a gentle tang, perfectly balancing the richness of river-harvested additions.",
       "Serving is an act of storytelling for the Tonga. Pala is presented in hand-fired ceramic bowls, often garnished with wild herbs gathered from the Zambezi's edge, symbolizing the harmony between the people and the flowing life-force of the river.",
     ],
-    image:
-      "https://planeterra.org/wp-content/uploads/2020/07/26.png",
+    image: LWC.foodBreakfastTray,
     imageSide: "left",
     badge: "Authentic Heritage",
     cardTitle: "Valley Mvuvhi Pala",
@@ -33,8 +33,7 @@ const heritageSections = [
       "Technique here is about precision pounding. The grain is stone-ground to a specific coarse texture that holds its form when steamed with rich, bone-marrow-infused broths. This creates a Pala that is as much about texture as it is about taste.",
       "For the Ndebele, every meal is a canvas. Their serving style involves arranging the Pala alongside colorful side-servings, creating a geometric plate that reflects the iconic mural paintings found on their ancestral homes.",
     ],
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/A%20plate%20of%20sadza.jpg",
+    image: LWC.foodMopaneSadza,
     imageSide: "right",
     badge: "Authentic Heritage",
     cardTitle: "Royal Ncuma Pala",
@@ -47,8 +46,7 @@ const heritageSections = [
       "Shona techniques emphasize the communal stir. Pala is often prepared in large batches during harvest festivals, where the continuous rhythmic stirring over an open flame creates a smoky depth that cannot be replicated in modern kitchens.",
       "Serving Pala in Shona culture is deeply rooted in respect. It is often served on hand-woven grass mats or wooden platters, emphasizing a return to the earth and the communal bond shared between those eating from the same vessel.",
     ],
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20meal.jpg",
+    image: LWC.foodSadzaMeat,
     imageSide: "left",
     badge: "Authentic Heritage",
     cardTitle: "Zvimba Harvest Pala",
@@ -57,10 +55,10 @@ const heritageSections = [
 ];
 
 const heritageMoments = [
-  "https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20meal.jpg",
-  "https://commons.wikimedia.org/wiki/Special:FilePath/Zimbabwe%20Traditionalfood.jpg",
-  "https://planeterra.org/wp-content/uploads/2020/07/26.png",
-  "https://commons.wikimedia.org/wiki/Special:FilePath/White%20sadza%2C%20braai%20and%20salads.jpg",
+  LWC.foodSadzaMeat,
+  LWC.foodGreensBowl,
+  LWC.foodHarvestBasket,
+  LWC.foodMopaneSadza,
 ];
 
 export default function RootsPage() {

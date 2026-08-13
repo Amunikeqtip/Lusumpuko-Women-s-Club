@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SiteFooter } from "../../../components/site-footer";
 import { SiteHeader } from "../../../components/site-header";
+import { LWC } from "../../../lib/lusumpuko-images";
 
 const ingredients = [
   "500g Traditional Stone-Ground Flour",
@@ -19,32 +20,27 @@ const ingredients = [
 const steps = [
   {
     title: "The Foundation: Mixing the Dough",
-    image:
-      "https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=1200&q=80",
+    image: LWC.foodHarvestBasket,
     body: "In a large wooden bowl, combine the stone-ground flour and pink salt. Slowly incorporate the chilled water while stirring with your hands. The goal is to reach a firm but pliable consistency.",
   },
   {
     title: "Resting & Aeration",
-    image:
-      "https://images.unsplash.com/photo-1517457373958-b7bdd4587205?auto=format&fit=crop&w=1200&q=80",
+    image: LWC.foodPumpkinLeaves,
     body: "Cover the dough with a damp cotton cloth and let it rest in a shaded spot for 30 minutes. This allows the gluten to relax, making it easier to achieve the signature thin layers.",
   },
   {
     title: "The Traditional Fold",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/A%20plate%20of%20sadza.jpg",
+    image: LWC.foodGreensBowl,
     body: "Dust your surface with extra flour. Roll the dough into thin, translucent circles. Brush with clarified butter and sprinkle the signature spice blend.",
   },
   {
     title: "Stone-Fired Searing",
-    image:
-      "https://images.unsplash.com/photo-1511690656952-34342bb7c2f2?auto=format&fit=crop&w=1200&q=80",
+    image: LWC.foodSadzaMeat,
     body: "Heat a heavy cast-iron skillet or traditional clay stone over medium-high heat. Sear the folded Pala for 3 to 4 minutes on each side until golden bubbles appear.",
   },
   {
     title: "The Community Serving",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Zimbabwe%20Traditionalfood.jpg",
+    image: LWC.foodMopaneSadza,
     body: "Slice into triangles and serve while steaming hot. Accompany with seasonal roasted vegetables or slow-cooked meat. It’s best enjoyed shared among family.",
   },
 ];
@@ -53,20 +49,17 @@ const pairings = [
   {
     title: "Spiced Tomato Relish",
     tag: "Side Dish",
-    image:
-      "https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1200&q=80",
+    image: LWC.foodGreensBowl,
   },
   {
     title: "Hibiscus Valley Tea",
     tag: "Drinks",
-    image:
-      "https://images.unsplash.com/photo-1497534446932-c925b458314e?auto=format&fit=crop&w=1200&q=80",
+    image: LWC.foodBreakfastTray,
   },
   {
     title: "Slow-Roasted Lamb",
     tag: "Traditional",
-    image:
-      "https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1200&q=80",
+    image: LWC.foodSadzaMeat,
   },
 ];
 
@@ -77,8 +70,7 @@ export default function RecipePage() {
       <section
         className="relative min-h-[420px] overflow-hidden pt-36"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(25,17,12,0.42),rgba(25,17,12,0.48)), url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80')",
+          backgroundImage: `linear-gradient(rgba(25,17,12,0.42),rgba(25,17,12,0.48)), url('${LWC.foodSadzaMeat}')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -203,8 +195,7 @@ export default function RecipePage() {
             <div
               className="mt-5 h-[320px] overflow-hidden rounded-[1.6rem] shadow-[0_18px_46px_rgba(46,24,11,0.12)]"
               style={{
-                backgroundImage:
-                  "linear-gradient(rgba(20,12,8,0.14),rgba(20,12,8,0.14)), url('https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1400&q=80')",
+                backgroundImage: `linear-gradient(rgba(20,12,8,0.14),rgba(20,12,8,0.14)), url('${LWC.foodMopaneSadza}')`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}

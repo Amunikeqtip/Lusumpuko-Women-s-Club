@@ -4,35 +4,32 @@ import Image from "next/image";
 import Link from "next/link";
 import { SiteFooter } from "../components/site-footer";
 import { SiteHeader } from "../components/site-header";
+import { LWC, lwcUrl } from "../lib/lusumpuko-images";
 
 const discoverCards = [
   {
     title: "Full Menu",
     subtitle: "Explore our rich seasonal selection",
     palette: "from-[#51412d] via-[#7a5c38] to-[#201814]",
-    image:
-      "url('https://commons.wikimedia.org/wiki/Special:FilePath/White%20sadza%2C%20braai%20and%20salads.jpg')",
+    image: lwcUrl(LWC.foodSadzaMeat),
   },
   {
     title: "Cultural Roots",
     subtitle: "The stories, rituals, and ingredients behind every dish",
     palette: "from-[#223825] via-[#708969] to-[#101c12]",
-    image:
-      "url('https://commons.wikimedia.org/wiki/Special:FilePath/A%20plate%20of%20sadza.jpg')",
+    image: lwcUrl(LWC.foodHarvestBasket),
   },
   {
     title: "Authentic Recipes",
     subtitle: "Traditional methods from Tonga, Ndebele, and Shona kitchens",
     palette: "from-[#3b3127] via-[#82684a] to-[#1b1511]",
-    image:
-      "url('https://commons.wikimedia.org/wiki/Special:FilePath/Sadza%20and%20Sausage.jpg')",
+    image: lwcUrl(LWC.foodMopaneSadza),
   },
   {
     title: "Visual Gallery",
     subtitle: "A warm look into our table, plating, and celebrations",
     palette: "from-[#62411d] via-[#b17d35] to-[#1f1208]",
-    image:
-      "url('https://commons.wikimedia.org/wiki/Special:FilePath/Zimbabwe%20Traditionalfood.jpg')",
+    image: lwcUrl(LWC.foodBreakfastTray),
   },
 ];
 
@@ -51,31 +48,29 @@ const testimonials = [
   },
   {
     quote:
-      "Ordering online was seamless, and the meal arrived beautifully presented. Truly memorable food.",
+      "Hosting with Lusumpuko felt personal and warm. The food was beautifully presented and truly memorable.",
     name: "Themba Z.",
     city: "Cape Town",
   },
 ];
 
 const gramTiles = [
-  "url('https://commons.wikimedia.org/wiki/Special:FilePath/Traditional%20meal.jpg')",
-  "url('https://commons.wikimedia.org/wiki/Special:FilePath/Zimbabwe%20Traditionalfood.jpg')",
-  "url('https://commons.wikimedia.org/wiki/Special:FilePath/A%20plate%20of%20sadza.jpg')",
-  "url('https://commons.wikimedia.org/wiki/Special:FilePath/Stewed%20Capenta%20and%20Sadza%28as%20it%20is%20known%20in%20Zimbabwe%29%20dish.JPG')",
-  "url('https://commons.wikimedia.org/wiki/Special:FilePath/White%20sadza%2C%20braai%20and%20salads.jpg')",
-  "url('https://commons.wikimedia.org/wiki/Special:FilePath/Sadza%20and%20Beans.jpg')",
+  lwcUrl(LWC.foodSadzaMeat),
+  lwcUrl(LWC.foodMopaneSadza),
+  lwcUrl(LWC.foodGreensBowl),
+  lwcUrl(LWC.foodBreakfastTray),
+  lwcUrl(LWC.foodHarvestBasket),
+  lwcUrl(LWC.foodPumpkinLeaves),
 ];
 
 const heroBackgroundStyle = {
-  backgroundImage:
-    "url('https://upload.wikimedia.org/wikipedia/commons/b/b5/Traditional_meal.jpg')",
+  backgroundImage: lwcUrl(LWC.outdoorGroupSign),
   backgroundPosition: "center center",
   backgroundSize: "cover",
 };
 
 const bestsellerImageStyle = {
-  backgroundImage:
-    "url('https://commons.wikimedia.org/wiki/Special:FilePath/Zimbabwe%20Traditionalfood.jpg')",
+  backgroundImage: lwcUrl(LWC.foodSadzaMeat),
   backgroundPosition: "center center",
   backgroundSize: "cover",
 };
@@ -122,7 +117,7 @@ export default function Home() {
                   href="/contact"
                   className="rounded-full bg-[#e15d1f] px-8 py-4 text-sm font-semibold text-white shadow-[0_16px_30px_rgba(225,93,31,0.32)] transition hover:bg-[#c74b11]"
                 >
-                  Order Online Now
+                  Share Our Table
                 </a>
                 <a
                   href="#menu"
@@ -224,12 +219,89 @@ export default function Home() {
               </div>
 
               <a
-                id="order"
-                href="#footer"
+                href="/contact"
                 className="mt-7 inline-flex w-full items-center justify-center rounded-xl bg-[#d75a1f] px-6 py-4 text-sm font-semibold text-white shadow-[0_18px_30px_rgba(215,90,31,0.18)] transition hover:bg-[#bf4a13] sm:w-auto"
               >
-                Order This Dish
+                Contact Us About This Dish
               </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        id="table"
+        className="relative z-0 overflow-hidden border-y border-[#eadbcf] bg-[linear-gradient(180deg,#2a1810_0%,#1a100c_55%,#140c09_100%)] py-20 text-white"
+      >
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_18%_20%,rgba(215,90,31,0.18),transparent_34%),radial-gradient(circle_at_82%_70%,rgba(224,160,74,0.12),transparent_30%)]" />
+        <div className="relative mx-auto grid max-w-6xl items-center gap-10 px-6 sm:px-8 lg:grid-cols-[0.9fr_1.1fr] lg:px-12">
+          <div className="mx-auto w-full max-w-[320px]">
+            <div
+              className="rounded-[1.75rem] p-[3px] shadow-[0_28px_70px_rgba(0,0,0,0.45)]"
+              style={{
+                backgroundImage:
+                  "repeating-linear-gradient(90deg,#1a120c 0 7px,#c94b26 7px 14px,#e0a04a 14px 21px,#fff6ec 21px 28px,#3f6b45 28px 35px,#7f4d33 35px 42px)",
+              }}
+            >
+              <div className="overflow-hidden rounded-[calc(1.75rem-3px)] bg-black">
+                <video
+                  className="aspect-[9/16] h-auto w-full object-cover"
+                  poster={LWC.tableExperiencePoster}
+                  src={LWC.tableExperienceVideo}
+                  controls
+                  playsInline
+                  muted
+                  loop
+                  autoPlay
+                  preload="metadata"
+                >
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div className="max-w-xl lg:pl-4">
+            <p className="inline-flex rounded-full border border-white/25 bg-white/8 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-[#f0c9a8]">
+              At our table
+            </p>
+            <h2 className="mt-5 font-[family-name:var(--font-display)] text-4xl leading-[0.98] tracking-[-0.03em] sm:text-5xl">
+              Guests gather.
+              <br />
+              <span className="text-[#e8a15a]">Tradition is served.</span>
+            </h2>
+            <p className="mt-5 text-base leading-8 text-white/78">
+              Step into an evening with Lusumpuko Women&apos;s Club — warm light,
+              shared plates, and the welcome of a real communal table in Victoria
+              Falls.
+            </p>
+            <ul className="mt-8 space-y-3 text-sm leading-7 text-white/72">
+              <li className="flex gap-3">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#d75a1f]" />
+                Traditional dishes served with care and celebration
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#e0a04a]" />
+                A setting made for gathering, not rushing
+              </li>
+              <li className="flex gap-3">
+                <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-[#6fad68]" />
+                Come share our table — we would love to host you
+              </li>
+            </ul>
+            <div className="mt-9 flex flex-wrap gap-3">
+              <Link
+                href="/contact"
+                className="rounded-full bg-[#d75a1f] px-6 py-3 text-sm font-semibold text-white transition hover:bg-[#bf4a13]"
+              >
+                Share Our Table
+              </Link>
+              <Link
+                href="/menu"
+                className="rounded-full border border-white/30 bg-white/8 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/14"
+              >
+                Browse the Menu
+              </Link>
             </div>
           </div>
         </div>

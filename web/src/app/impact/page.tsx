@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { SiteFooter } from "../../components/site-footer";
 import { SiteHeader } from "../../components/site-header";
+import { LWC } from "../../lib/lusumpuko-images";
 
 const impactStories = [
   {
@@ -10,57 +11,48 @@ const impactStories = [
     summary:
       "Each season, the women of Lusumpuko prepare and deliver nourishing meals to families facing hard months — carrying the same care they bring to the Pala table into homes that need it most.",
     place: "Victoria Falls & surrounds",
-    image:
-      "https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1600&q=80",
+    image: LWC.foodSadzaMeat,
   },
   {
     title: "Kitchen skills for the next generation",
     summary:
       "Through hands-on gatherings, club members teach young women traditional cooking methods, food hygiene, and how to turn heritage recipes into livelihood — so culture and income grow together.",
     place: "Community kitchens",
-    image:
-      "https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1600&q=80",
+    image: LWC.foodGreensBowl,
   },
   {
     title: "Support when celebration meets need",
     summary:
       "From school feeding days to quiet gifts of grain and oil, Lusumpuko Women’s Club answers local requests with dignity — never as charity theatre, always as neighbours standing with neighbours.",
     place: "Local partnerships",
-    image:
-      "https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=1600&q=80",
+    image: LWC.foodHarvestBasket,
   },
 ];
 
 const gallery = [
   {
     title: "Morning prep for community meals",
-    image:
-      "https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1200&q=80",
+    image: LWC.foodBreakfastTray,
   },
   {
-    title: "Women gathering to pack food parcels",
-    image:
-      "https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&fit=crop&w=1200&q=80",
+    title: "Women of Lusumpuko Women's Club",
+    image: LWC.womenGardenDrum,
   },
   {
-    title: "Teaching days in the shared kitchen",
-    image:
-      "https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=1200&q=80",
+    title: "Teaching days with traditional tools",
+    image: LWC.womenGardenMortar,
   },
   {
-    title: "Delivering warmth to nearby homes",
-    image:
-      "https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?auto=format&fit=crop&w=1200&q=80",
+    title: "A plate shared with care",
+    image: LWC.foodMopaneSadza,
   },
   {
-    title: "Harvest shared from local gardens",
-    image:
-      "https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80",
+    title: "Pride in our village home",
+    image: LWC.womenVillage,
   },
   {
-    title: "Community celebration after service",
-    image:
-      "https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=1200&q=80",
+    title: "Fresh from the garden",
+    image: LWC.foodGardenGreens,
   },
 ];
 
@@ -71,8 +63,7 @@ export default function ImpactPage() {
       <section
         className="relative min-h-[88vh] overflow-hidden pt-28"
         style={{
-          backgroundImage:
-            "linear-gradient(105deg, rgba(20,12,8,0.72) 8%, rgba(20,12,8,0.38) 55%, rgba(20,12,8,0.2) 100%), url('https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=2000&q=80')",
+          backgroundImage: `linear-gradient(105deg, rgba(20,12,8,0.72) 8%, rgba(20,12,8,0.38) 55%, rgba(20,12,8,0.2) 100%), url('${LWC.womenGroupMural}')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

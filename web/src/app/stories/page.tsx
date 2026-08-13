@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import Link from "next/link";
 import { SiteFooter } from "../../components/site-footer";
 import { SiteHeader } from "../../components/site-header";
+import { LWC } from "../../lib/lusumpuko-images";
 
 const testimonials = [
   ["Chipo Moyo", "Harare, Zimbabwe", "The Pala here tastes exactly like the one my grandmother used to make in the village. It's more than food; it's a trip down memory lane."],
@@ -19,15 +19,13 @@ const stories = [
     title: "Sundays at the Valley: A Family Tradition",
     author: "Grace Mambo",
     tag: "Community Legacy",
-    image:
-      "https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=1400&q=80",
+    image: LWC.foodBreakfastTray,
   },
   {
     title: "The Wedding Feast: A Tonga Celebration",
     author: "Samuel Siachone",
     tag: "Ceremony Legacy",
-    image:
-      "https://planeterra.org/wp-content/uploads/2020/07/26.png",
+    image: LWC.foodSadzaMeat,
   },
 ];
 
@@ -35,11 +33,11 @@ export default function StoriesPage() {
   return (
     <main className="bg-[#fbf7f2] text-[#2a1c15]">
       <SiteHeader />
+
       <section
         className="pt-32"
         style={{
-          backgroundImage:
-            "linear-gradient(rgba(17,10,7,0.55),rgba(17,10,7,0.55)), url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?auto=format&fit=crop&w=1600&q=80')",
+          backgroundImage: `linear-gradient(rgba(17,10,7,0.55),rgba(17,10,7,0.55)), url('${LWC.womenGardenDrum}')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}

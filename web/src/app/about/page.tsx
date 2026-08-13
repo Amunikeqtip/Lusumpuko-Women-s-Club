@@ -4,6 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { SiteFooter } from "../../components/site-footer";
 import { SiteHeader } from "../../components/site-header";
+import { LWC } from "../../lib/lusumpuko-images";
 
 const timelineItems = [
   {
@@ -38,24 +39,21 @@ const regions = [
     description:
       "Characterized by its intense smokiness and use of sun-dried baobab fruit for a distinct tanginess.",
     link: "Explore Tonga Flavors",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/Zimbabwe%20Traditionalfood.jpg",
+    image: LWC.foodBreakfastTray,
   },
   {
     title: "Ndebele Central",
     description:
       "A smoother, silkier texture achieved through secondary milling. This variation is celebrated for its nutty undertones and potent pairings.",
     link: "See Ndebele Traditions",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/A%20plate%20of%20sadza.jpg",
+    image: LWC.foodMopaneSadza,
   },
   {
     title: "Shona South",
     description:
       "Famed for Ziyo'y Minger millet blends, resulting in a rich chocolate-brown hue and robust earth notes that stand up to spicy stews.",
     link: "Discover Shona Heritage",
-    image:
-      "https://commons.wikimedia.org/wiki/Special:FilePath/White%20sadza%2C%20braai%20and%20salads.jpg",
+    image: LWC.foodSadzaMeat,
   },
 ];
 
@@ -85,8 +83,7 @@ export default function AboutPage() {
             <div
               className="relative min-h-[430px] overflow-hidden rounded-[2rem] border border-[#f1dfd3] bg-white shadow-[0_28px_65px_rgba(63,34,16,0.1)]"
               style={{
-                backgroundImage:
-                  "url('https://planeterra.org/wp-content/uploads/2020/07/26.png')",
+                backgroundImage: `url('${LWC.womenGroupMural}')`,
                 backgroundSize: "cover",
                 backgroundPosition: "center",
               }}
@@ -326,25 +323,25 @@ export default function AboutPage() {
       <section className="mt-10 bg-[#d7541b] py-16 text-white">
         <div className="mx-auto max-w-4xl px-6 text-center sm:px-8">
           <h2 className="font-[family-name:var(--font-display)] text-3xl sm:text-5xl">
-            Ready to Taste the History?
+            Come share our table
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/88">
-            Experience the authentic flavors of Lusumpuko Pala delivered to
-            your door or visit our traditional roots page to learn about the
-            people who made this dish a legend.
+            We welcome guests for traditional meals, gatherings, and cultural
+            dining with Lusumpuko Women&apos;s Club. Get in touch — we would
+            love to host you.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">
             <Link
-              href="/#order"
+              href="/contact"
               className="rounded-full bg-white px-6 py-3 text-sm font-semibold text-[#d7541b] transition hover:bg-[#fff0e6]"
             >
-              Order Online Now
+              Contact Us
             </Link>
             <Link
               href="/roots"
               className="rounded-full border border-white/35 bg-white/10 px-6 py-3 text-sm font-semibold text-white transition hover:bg-white/16"
             >
-              Try the Heritage
+              Explore Our Roots
             </Link>
           </div>
         </div>

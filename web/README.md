@@ -95,7 +95,7 @@ EMAIL_USERNAME=noreply@example.com
 EMAIL_PASSWORD=your_smtp_password
 EMAIL_PORT=587
 EMAIL_FROM="Lusumpuko Women's Club <noreply@example.com>"
-DONATION_OWNER_EMAIL=hello@lusumpukopala.com
+DONATION_OWNER_EMAIL=info@lusumpuko.com
 ```
 
 ## Notes

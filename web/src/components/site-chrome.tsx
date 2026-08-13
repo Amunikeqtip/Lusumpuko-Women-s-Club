@@ -72,7 +72,7 @@ export function GlobalChrome() {
       <div className="fixed bottom-24 right-3 z-[1200] md:bottom-8 md:right-6">
         <div className="flex items-center gap-2 rounded-full border border-white/40 bg-[linear-gradient(135deg,rgba(255,250,244,0.94),rgba(255,244,236,0.84))] p-2 shadow-[0_18px_55px_rgba(53,32,14,0.18)] backdrop-blur-xl">
           <a
-            href="https://wa.me/263770000000?text=Hello%20Lusumpuko%20team%2C%20I%27d%20like%20to%20make%20an%20order%20or%20enquiry."
+            href="https://wa.me/26377677288?text=Hello%20Lusumpuko%20team%2C%20I%27d%20love%20to%20share%20your%20table%20and%20learn%20more."
             target="_blank"
             rel="noreferrer"
             aria-label="Message us on WhatsApp"
@@ -81,7 +81,7 @@ export function GlobalChrome() {
             <FaWhatsapp className="text-[1.25rem]" aria-hidden="true" />
           </a>
           <a
-            href="mailto:hello@lusumpukopala.com?subject=Order%20or%20Enquiry"
+            href="mailto:info@lusumpuko.com?subject=Enquiry"
             aria-label="Send us an email"
             className="flex h-11 w-11 items-center justify-center rounded-full bg-white text-[#d75a1f] shadow-[inset_0_0_0_1px_rgba(215,90,31,0.18)] transition hover:scale-105"
           >

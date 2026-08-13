@@ -103,7 +103,7 @@ export function SiteFooter({
               </li>
               <li>
                 <Link href="/contact" className={footerLinkClassName}>
-                  Ordering Support
+                  Share Our Table
                 </Link>
               </li>
               <li>
@@ -121,7 +121,7 @@ export function SiteFooter({
             <ul className="mt-4 space-y-3 text-sm leading-7 text-[#54463b]">
               <li>Victoria Falls, Zimbabwe</li>
               <li>+263 77677288</li>
-              <li>hello@lusumpuko.com</li>
+              <li>info@lusumpuko.com</li>
             </ul>
             {showSocialIcons && (
               <div className="mt-6 flex gap-3 text-[#d75a1f]">
