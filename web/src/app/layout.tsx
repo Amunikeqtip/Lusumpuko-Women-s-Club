@@ -3,6 +3,9 @@ import "./globals.css";
 import { GlobalChrome } from "../components/site-chrome";
 
 export const metadata: Metadata = {
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://lusumpuko.com",
+  ),
   title: "Lusumpuko Women's Club",
   description: "A warm cultural dining landing page for Lusumpuko Pala.",
   icons: {

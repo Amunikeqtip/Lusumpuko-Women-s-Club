@@ -189,7 +189,7 @@ export function SiteFooter({
             <Link href="/#footer" className={legalLinkClassName}>
               Terms of Service
             </Link>
-            <Link href="/#footer" className={legalLinkClassName}>
+            <Link href="/sitemap" className={legalLinkClassName}>
               Sitemap
             </Link>
           </div>
