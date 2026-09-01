@@ -125,6 +125,12 @@ export default function Home() {
                 >
                   Explore Menu
                 </a>
+                <a
+                  href="/donate"
+                  className="rounded-full border border-[#f6c177] bg-[#1a120c]/40 px-8 py-4 text-sm font-semibold text-[#f6c177] backdrop-blur transition hover:bg-[#1a120c]/60"
+                >
+                  Donate
+                </a>
               </div>
             </div>
           </div>
