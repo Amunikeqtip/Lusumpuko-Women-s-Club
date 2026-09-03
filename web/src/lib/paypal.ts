@@ -1,4 +1,4 @@
-﻿export type PayPalDonationInput = {
+export type PayPalDonationInput = {
   amount: number;
   email: string;
   name?: string;

@@ -1,4 +1,4 @@
-﻿/** Lusumbuko Women's Club PayPal Hosted Buttons / NCP donation checkout. */
+/** Lusumbuko Women's Club PayPal Hosted Buttons / NCP donation checkout. */
 export const PAYPAL_HOSTED_CLIENT_ID =
   "BAAvlJnvZuI2_-aZlgHx_seQcCC4YpLT6jhQEZrCldRjlqrdtX2DY7QkzxdcFjOX_ge7Ph9-w0gCZ91lPo";
 

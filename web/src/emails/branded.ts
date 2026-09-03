@@ -1,4 +1,4 @@
-﻿export const clubContact = {
+export const clubContact = {
   providerName: "Lusumbuko Women's Club",
   email: "info@lusumpuko.com",
   phone: "+263 772898470",

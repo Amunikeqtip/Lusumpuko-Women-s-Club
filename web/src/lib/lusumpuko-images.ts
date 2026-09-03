@@ -1,4 +1,4 @@
-﻿/** Local club photos in /public/Lusumbuko (clean filenames). */
+/** Local club photos in /public/Lusumbuko (clean filenames). */
 export const LWC = {
   womenGroupMural: "/Lusumbuko/photo-01.jpg",
   teamWithGuestsMural: "/Lusumbuko/photo-02.jpg",

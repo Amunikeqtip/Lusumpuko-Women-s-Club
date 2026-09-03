@@ -1,4 +1,4 @@
-﻿# Lusumbuko Women's Club
+# Lusumbuko Women's Club
 
 A modern Next.js website for Lusumbuko Women's Club, built as a small workspace app with a polished heritage-inspired landing experience.
 
