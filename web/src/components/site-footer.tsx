@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 
 type SiteFooterProps = {
   id?: string;
@@ -23,7 +23,7 @@ export function SiteFooter({
             <div className="flex items-center gap-3">
               <span className="text-[#d75a1f]">◇</span>
               <p className="font-[family-name:var(--font-display)] text-2xl text-[#271913]">
-                Lusumpuko Women&apos;s Club
+                Lusumbuko Women&apos;s Club
               </p>
             </div>
             <p className="mt-5 max-w-sm text-sm leading-7 text-[#6e5f53]">
@@ -120,7 +120,7 @@ export function SiteFooter({
             </h3>
             <ul className="mt-4 space-y-3 text-sm leading-7 text-[#54463b]">
               <li>Victoria Falls, Zimbabwe</li>
-              <li>+263 77677288</li>
+              <li>+263 772898470</li>
               <li>info@lusumpuko.com</li>
             </ul>
             {showSocialIcons && (
@@ -181,7 +181,7 @@ export function SiteFooter({
         </div>
 
         <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-[#eadfd5] pt-6 text-xs uppercase tracking-[0.18em] text-[#9f8b7c]">
-          <p>© 2026 Lusumpuko Pala. All rights reserved.</p>
+          <p>© 2026 Lusumbuko Pala. All rights reserved.</p>
           <div className="flex gap-6">
             <Link href="/#footer" className={legalLinkClassName}>
               Privacy Policy

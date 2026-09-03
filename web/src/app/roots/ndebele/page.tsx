@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { SiteFooter } from "../../../components/site-footer";
@@ -139,7 +139,7 @@ export default function NdebelePage() {
           <p className="mt-4 max-w-4xl text-sm leading-8 text-[#6d5f54]">
             Ndebele-style Pala today is often paired with hearty relishes,
             roasted proteins, and spice-forward broths that create a strong,
-            memorable plate. It contributes confidence to the broader Lusumpuko
+            memorable plate. It contributes confidence to the broader Lusumbuko
             table: more body, more color, and more visual rhythm.
           </p>
         </div>

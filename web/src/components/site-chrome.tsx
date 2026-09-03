@@ -72,7 +72,7 @@ export function GlobalChrome() {
       <div className="fixed bottom-24 right-3 z-[1200] md:bottom-8 md:right-6">
         <div className="flex items-center gap-2 rounded-full border border-white/40 bg-[linear-gradient(135deg,rgba(255,250,244,0.94),rgba(255,244,236,0.84))] p-2 shadow-[0_18px_55px_rgba(53,32,14,0.18)] backdrop-blur-xl">
           <a
-            href="https://wa.me/26377677288?text=Hello%20Lusumpuko%20team%2C%20I%27d%20love%20to%20share%20your%20table%20and%20learn%20more."
+            href="https://wa.me/263772898470?text=Hello%20Lusumbuko%20team%2C%20I%27d%20love%20to%20share%20your%20table%20and%20learn%20more."
             target="_blank"
             rel="noreferrer"
             aria-label="Message us on WhatsApp"

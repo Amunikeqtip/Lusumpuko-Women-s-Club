@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -166,7 +166,7 @@ export function SiteHeader({
             <div className="h-9 w-px bg-[#ead9ca] sm:h-10" />
             <div>
               <p className="font-[family-name:var(--font-display)] text-[0.95rem] leading-none text-[#c74f19] sm:text-lg md:text-xl">
-                Lusumpuko Women&apos;s Club
+                Lusumbuko Women&apos;s Club
               </p>
               <p className="mt-1 text-[0.48rem] font-semibold uppercase tracking-[0.18em] text-[#8d7869] sm:text-[0.65rem] sm:tracking-[0.3em]">
                 Heritage Dining Experience

@@ -1,4 +1,4 @@
-export type PayPalDonationInput = {
+﻿export type PayPalDonationInput = {
   amount: number;
   email: string;
   name?: string;
@@ -113,7 +113,7 @@ export async function createPayPalDonationOrder(input: PayPalDonationInput) {
   const customId = `lwc-donate-${Date.now().toString(36)}`.slice(0, 127);
   const description = name
     ? `Donation from ${name}`.slice(0, 127)
-    : "Donation to Lusumpuko Women's Club";
+    : "Donation to Lusumbuko Women's Club";
   const value = formatMoney(amount);
 
   const order = await paypalRequest<{ id: string; status?: string }>(
@@ -138,7 +138,7 @@ export async function createPayPalDonationOrder(input: PayPalDonationInput) {
             },
             items: [
               {
-                name: "Donation — Lusumpuko Women's Club".slice(0, 127),
+                name: "Donation — Lusumbuko Women's Club".slice(0, 127),
                 quantity: "1",
                 unit_amount: {
                   currency_code: "USD",
@@ -150,7 +150,7 @@ export async function createPayPalDonationOrder(input: PayPalDonationInput) {
           },
         ],
         application_context: {
-          brand_name: "Lusumpuko Women's Club",
+          brand_name: "Lusumbuko Women's Club",
           user_action: "PAY_NOW",
           shipping_preference: "NO_SHIPPING",
         },

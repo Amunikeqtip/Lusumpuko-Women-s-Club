@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -73,7 +73,7 @@ export default function RootsPage() {
           The Three Pillars of <span className="text-[#d75a1f]">Our Taste</span>
         </h1>
         <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-[#73655a]">
-          Lusumpuko Pala isn&apos;t just a recipe; it&apos;s a tapestry woven from
+          Lusumbuko Pala isn&apos;t just a recipe; it&apos;s a tapestry woven from
           the traditions of three distinct cultures. Explore how the Tonga,
           Ndebele, and Shona people have shaped every grain and flavor.
         </p>

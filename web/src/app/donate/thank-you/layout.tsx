@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Thank You — Lusumpuko Women's Club",
+  title: "Thank You — Lusumbuko Women's Club",
   description:
-    "Thank you for your generous donation to Lusumpuko Women's Club. Your support makes a real difference.",
+    "Thank you for your generous donation to Lusumbuko Women's Club. Your support makes a real difference.",
 };
 
 export default function ThankYouLayout({

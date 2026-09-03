@@ -1,6 +1,6 @@
-# Lusumpuko Women's Club
+﻿# Lusumbuko Women's Club
 
-A modern Next.js website for Lusumpuko Women's Club, built as a small workspace app with a polished heritage-inspired landing experience.
+A modern Next.js website for Lusumbuko Women's Club, built as a small workspace app with a polished heritage-inspired landing experience.
 
 ## Tech Stack
 
@@ -94,7 +94,7 @@ EMAIL_HOST=smtp.example.com
 EMAIL_USERNAME=noreply@example.com
 EMAIL_PASSWORD=your_smtp_password
 EMAIL_PORT=587
-EMAIL_FROM="Lusumpuko Women's Club <noreply@example.com>"
+EMAIL_FROM="Lusumbuko Women's Club <noreply@example.com>"
 DONATION_OWNER_EMAIL=info@lusumpuko.com
 ```
 

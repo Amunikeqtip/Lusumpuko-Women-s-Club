@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { SiteFooter } from "../../components/site-footer";
@@ -9,7 +9,7 @@ const impactStories = [
   {
     title: "Meals shared across the valley",
     summary:
-      "Each season, the women of Lusumpuko prepare and deliver nourishing meals to families facing hard months — carrying the same care they bring to the Pala table into homes that need it most.",
+      "Each season, the women of Lusumbuko prepare and deliver nourishing meals to families facing hard months — carrying the same care they bring to the Pala table into homes that need it most.",
     place: "Victoria Falls & surrounds",
     image: LWC.foodSadzaMeat,
   },
@@ -23,7 +23,7 @@ const impactStories = [
   {
     title: "Support when celebration meets need",
     summary:
-      "From school feeding days to quiet gifts of grain and oil, Lusumpuko Women’s Club answers local requests with dignity — never as charity theatre, always as neighbours standing with neighbours.",
+      "From school feeding days to quiet gifts of grain and oil, Lusumbuko Women’s Club answers local requests with dignity — never as charity theatre, always as neighbours standing with neighbours.",
     place: "Local partnerships",
     image: LWC.foodHarvestBasket,
   },
@@ -35,7 +35,7 @@ const gallery = [
     image: LWC.foodBreakfastTray,
   },
   {
-    title: "Women of Lusumpuko Women's Club",
+    title: "Women of Lusumbuko Women's Club",
     image: LWC.womenGardenDrum,
   },
   {
@@ -70,13 +70,13 @@ export default function ImpactPage() {
       >
         <div className="mx-auto flex min-h-[calc(88vh-7rem)] max-w-6xl flex-col justify-end px-6 pb-16 sm:px-8 lg:px-12 lg:pb-20">
           <p className="impact-fade-up font-[family-name:var(--font-display)] text-2xl text-white sm:text-3xl">
-            Lusumpuko Women&apos;s Club
+            Lusumbuko Women&apos;s Club
           </p>
           <h1 className="impact-fade-up impact-delay-1 mt-4 max-w-3xl font-[family-name:var(--font-display)] text-4xl leading-[0.95] tracking-[-0.03em] text-white sm:text-6xl">
             The giving we carry into the community
           </h1>
           <p className="impact-fade-up impact-delay-2 mt-6 max-w-xl text-base leading-8 text-white/88">
-            Stories and photographs of the meals, skills, and care Lusumpuko women
+            Stories and photographs of the meals, skills, and care Lusumbuko women
             share with families and neighbours beyond our dining table.
           </p>
           <div className="impact-fade-up impact-delay-3 mt-8 flex flex-wrap gap-3">
@@ -101,7 +101,7 @@ export default function ImpactPage() {
           Community reads
         </p>
         <h2 className="mt-4 max-w-2xl font-[family-name:var(--font-display)] text-3xl leading-tight text-[#241711] sm:text-5xl">
-          How Lusumpuko women give back
+          How Lusumbuko women give back
         </h2>
         <p className="mt-5 max-w-2xl text-base leading-8 text-[#706055]">
           These are the efforts our members lead for others — not fundraising
@@ -188,7 +188,7 @@ export default function ImpactPage() {
               Help us keep giving
             </h2>
             <p className="mx-auto mt-5 max-w-xl text-base leading-8 text-white/88">
-              When you donate to Lusumpuko Women&apos;s Club, you strengthen the
+              When you donate to Lusumbuko Women&apos;s Club, you strengthen the
               same hands that cook, teach, and deliver care across our community.
             </p>
             <Link

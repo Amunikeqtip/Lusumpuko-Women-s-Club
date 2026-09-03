@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Script from "next/script";
@@ -131,7 +131,7 @@ export function PayPalHostedButton({ className }: PayPalHostedButtonProps) {
           >
             <Image
               src={qrImageSrc}
-              alt="Donation — Lusumpuko Women's Club PayPal QR code"
+              alt="Donation — Lusumbuko Women's Club PayPal QR code"
               width={220}
               height={260}
               className="h-auto w-full rounded-xl border border-[#efe1d6] bg-white object-contain"

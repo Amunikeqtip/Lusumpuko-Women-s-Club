@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -27,7 +27,7 @@ const timelineItems = [
   },
   {
     year: "2024",
-    title: "Lusumpuko Founding",
+    title: "Lusumbuko Founding",
     body: "We open our doors to share this timeless culinary art with a global audience, preserving every authentic detail.",
     side: "left",
   },
@@ -110,7 +110,7 @@ export default function AboutPage() {
             </h1>
             <p className="mt-6 max-w-xl text-base leading-8 text-[#6e6055]">
               Pala is more than a dish; it is a cultural vessel. Born from the
-              fertile soils of the Lusumpuko Valley, this traditional staple has
+              fertile soils of the Lusumbuko Valley, this traditional staple has
               been the silent witness to centuries of gatherings, celebrations,
               and resilience.
             </p>
@@ -229,7 +229,7 @@ export default function AboutPage() {
             </h2>
             <p className="mt-3 max-w-2xl text-sm leading-7 text-[#75675c]">
               While the soul of Pala remains constant, each region of the
-              Lusumpuko Valley adds its own unique signature to the craft.
+              Lusumbuko Valley adds its own unique signature to the craft.
             </p>
           </div>
           <a
@@ -280,7 +280,7 @@ export default function AboutPage() {
               The Legacy Keepers
             </h3>
             <p className="mt-3 max-w-md text-sm leading-7 text-[#6d5f54]">
-              The team behind Lusumpuko Pala are direct descendants of the
+              The team behind Lusumbuko Pala are direct descendants of the
               valley&apos;s most revered culinary masters. We see ourselves as
               stewards of a living history.
             </p>
@@ -303,7 +303,7 @@ export default function AboutPage() {
             <h3 className="mt-3 font-semibold text-[#241711]">Source of Truth</h3>
             <p className="mt-2 text-sm leading-7 text-[#6d5f54]">
               We source all our grains directly from communities in the
-              Lusumpuko region to ensure realism and authenticity.
+              Lusumbuko region to ensure realism and authenticity.
             </p>
           </article>
 
@@ -327,7 +327,7 @@ export default function AboutPage() {
           </h2>
           <p className="mx-auto mt-4 max-w-2xl text-sm leading-7 text-white/88">
             We welcome guests for traditional meals, gatherings, and cultural
-            dining with Lusumpuko Women&apos;s Club. Get in touch — we would
+            dining with Lusumbuko Women&apos;s Club. Get in touch — we would
             love to host you.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-4">

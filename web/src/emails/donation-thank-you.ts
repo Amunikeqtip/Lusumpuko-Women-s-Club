@@ -1,4 +1,4 @@
-import {
+﻿import {
   clubContact,
   escapeHtml,
   renderBrandedEmailHtml,
@@ -29,7 +29,7 @@ Thank you — we received your PayPal donation of ${currency} ${amountPaid}.
 
 Transaction: ${transactionId}
 
-Your gift helps Lusumpuko Women's Club sustain heritage cooking, community gatherings, and opportunities for women across the valley.
+Your gift helps Lusumbuko Women's Club sustain heritage cooking, community gatherings, and opportunities for women across the valley.
 
 Questions? Email ${clubContact.email} or call ${clubContact.phone}.
 

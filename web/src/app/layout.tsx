@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import "./globals.css";
 import { GlobalChrome } from "../components/site-chrome";
 
@@ -6,8 +6,8 @@ export const metadata: Metadata = {
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL || "https://lusumpuko.com",
   ),
-  title: "Lusumpuko Women's Club",
-  description: "A warm cultural dining landing page for Lusumpuko Pala.",
+  title: "Lusumbuko Women's Club",
+  description: "A warm cultural dining landing page for Lusumbuko Pala.",
   icons: {
     icon: "/lwc-favicon.svg",
     shortcut: "/lwc-favicon.svg",

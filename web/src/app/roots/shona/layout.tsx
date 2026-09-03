@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Shona Heritage — Lusumpuko Women's Club",
+  title: "Shona Heritage — Lusumbuko Women's Club",
   description:
-    "Discover the Shona heritage and its contributions to the Pala tradition at Lusumpuko Women's Club.",
+    "Discover the Shona heritage and its contributions to the Pala tradition at Lusumbuko Women's Club.",
 };
 
 export default function ShonaLayout({

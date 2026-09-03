@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "About Us — Lusumpuko Women's Club",
+  title: "About Us — Lusumbuko Women's Club",
   description:
-    "Our story and history — the Tonga, Ndebele, and Shona roots of the Pala tradition and how Lusumpuko Women's Club preserves it.",
+    "Our story and history — the Tonga, Ndebele, and Shona roots of the Pala tradition and how Lusumbuko Women's Club preserves it.",
 };
 
 export default function AboutLayout({

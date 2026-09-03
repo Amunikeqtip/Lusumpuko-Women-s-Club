@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Link from "next/link";
 import { SiteFooter } from "../../components/site-footer";
@@ -7,7 +7,7 @@ import { LWC } from "../../lib/lusumpuko-images";
 
 const testimonials = [
   ["Chipo Moyo", "Harare, Zimbabwe", "The Pala here tastes exactly like the one my grandmother used to make in the village. It's more than food; it's a trip down memory lane."],
-  ["Thabo Ndlovu", "Bulawayo, Zimbabwe", "Lusumpuko Pala captures the true essence of Ndebele culinary heritage. The spice balance is impeccable and the texture is perfect."],
+  ["Thabo Ndlovu", "Bulawayo, Zimbabwe", "Lusumbuko Pala captures the true essence of Ndebele culinary heritage. The spice balance is impeccable and the texture is perfect."],
   ["Tendai Sithole", "Harare, Zimbabwe", "I brought my international friends here to show them real Shona culture. They were blown away by the hospitality and the unique Pala variations."],
   ["Sipho Dube", "Victoria Falls", "Every bite tells a story. The Royal Tonga Pala is a masterpiece. I've been coming here for years and the quality never wavers."],
   ["Nomalanga Ncube", "Gweru", "Finally a place that respects the slow-cooking traditions! You can really tell this wasn't rushed. Absolute excellence."],
@@ -44,7 +44,7 @@ export default function StoriesPage() {
       >
         <div className="mx-auto max-w-5xl px-6 py-24 text-center text-white sm:px-8">
           <h1 className="font-[family-name:var(--font-display)] text-4xl leading-[0.95] sm:text-6xl">Our Legacy, Your<br />Stories</h1>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/88">Discover how Lusumpuko Pala is more than just a meal. It&apos;s a shared heritage passed down through generations.</p>
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/88">Discover how Lusumbuko Pala is more than just a meal. It&apos;s a shared heritage passed down through generations.</p>
         </div>
       </section>
 

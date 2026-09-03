@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { SiteFooter } from "../../components/site-footer";
 import { SiteHeader } from "../../components/site-header";
 
@@ -22,7 +22,7 @@ const sections: SitemapSection[] = [
       {
         label: "Homepage",
         href: "/",
-        description: "Welcome to Lusumpuko Women's Club — heritage dining in Victoria Falls",
+        description: "Welcome to Lusumbuko Women's Club — heritage dining in Victoria Falls",
       },
     ],
   },
@@ -99,9 +99,9 @@ const sections: SitemapSection[] = [
 ];
 
 export const metadata = {
-  title: "Sitemap — Lusumpuko Women's Club",
+  title: "Sitemap — Lusumbuko Women's Club",
   description:
-    "Complete site map for Lusumpuko Women's Club. Find every page on our website quickly.",
+    "Complete site map for Lusumbuko Women's Club. Find every page on our website quickly.",
   alternates: {
     canonical: `${siteUrl}/sitemap`,
   },
@@ -120,7 +120,7 @@ export default function SitemapPage() {
           Explore Our Site
         </h1>
         <p className="mt-4 max-w-xl text-base leading-relaxed text-[#6e5f53]">
-          Every page on lusumpuko.com in one place. Jump straight to the section
+                Every page on lusumpuko.com in one place. Jump straight to the section
           that interests you.
         </p>
 

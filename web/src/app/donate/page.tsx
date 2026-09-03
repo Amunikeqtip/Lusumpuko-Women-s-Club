@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { PayPalHostedButton } from "../../components/paypal-hosted-button";
 import { SiteFooter } from "../../components/site-footer";
 import { SiteHeader } from "../../components/site-header";
@@ -19,10 +19,10 @@ export default function DonatePage() {
             Support the club
           </p>
           <h1 className="mt-6 max-w-3xl font-[family-name:var(--font-display)] text-4xl leading-[0.95] tracking-[-0.03em] text-[#241711] sm:text-6xl">
-            Donate to <span className="text-[#d75a1f] italic">Lusumpuko</span>
+            Donate to <span className="text-[#d75a1f] italic">Lusumbuko</span>
           </h1>
           <p className="mt-6 max-w-2xl text-base leading-8 text-[#706055]">
-            Your gift helps Lusumpuko Women&apos;s Club sustain heritage cooking,
+            Your gift helps Lusumbuko Women&apos;s Club sustain heritage cooking,
             community gatherings, and opportunities for women across the valley.
           </p>
           <Link

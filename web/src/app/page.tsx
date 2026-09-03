@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -48,7 +48,7 @@ const testimonials = [
   },
   {
     quote:
-      "Hosting with Lusumpuko felt personal and warm. The food was beautifully presented and truly memorable.",
+      "Hosting with Lusumbuko felt personal and warm. The food was beautifully presented and truly memorable.",
     name: "Themba Z.",
     city: "Cape Town",
   },
@@ -144,7 +144,7 @@ export default function Home() {
         <SectionLabel>Our Cultural Vision</SectionLabel>
         <blockquote className="mx-auto mt-8 max-w-4xl font-[family-name:var(--font-display)] text-3xl leading-tight tracking-[-0.03em] text-[#241711] sm:text-5xl lg:text-6xl">
           &quot;Food is the most intimate way to share a history. Through
-          Lusumpuko Women&apos;s Club, we are not just serving meals, we are preserving the
+          Lusumbuko Women&apos;s Club, we are not just serving meals, we are preserving the
           echoes of our ancestors for the generations of tomorrow.&quot;
         </blockquote>
         <div className="mx-auto mt-10 flex w-fit flex-col items-center">
@@ -277,7 +277,7 @@ export default function Home() {
               <span className="text-[#e8a15a]">Tradition is served.</span>
             </h2>
             <p className="mt-5 text-base leading-8 text-white/78">
-              Step into an evening with Lusumpuko Women&apos;s Club — warm light,
+              Step into an evening with Lusumbuko Women&apos;s Club — warm light,
               shared plates, and the welcome of a real communal table in Victoria
               Falls.
             </p>
@@ -363,7 +363,7 @@ export default function Home() {
               </h2>
               <p className="mt-3 max-w-2xl text-sm leading-7 text-[#76685c]">
                 Taste is subjective, but tradition is universal. See why
-                thousands choose Lusumpuko Pala for their cultural celebrations.
+                thousands choose Lusumbuko Pala for their cultural celebrations.
               </p>
             </div>
             <a
@@ -432,7 +432,7 @@ export default function Home() {
               </h2>
             </div>
             <a href="#footer" className="text-sm font-semibold text-[#d75a1f]">
-              @LusumpukoPala ↗
+              @LusumbukoPala ↗
             </a>
           </div>
 
@@ -459,7 +459,7 @@ export default function Home() {
         <div className="mx-auto flex max-w-6xl flex-col gap-10 px-6 sm:px-8 lg:flex-row lg:items-center lg:justify-between lg:px-12">
           <div className="max-w-xl">
             <h2 className="font-[family-name:var(--font-display)] text-4xl sm:text-5xl">
-              Join the Lusumpuko Family
+              Join the Lusumbuko Family
             </h2>
             <p className="mt-4 text-sm leading-7 text-white/85">
               Receive exclusive heritage recipes, cultural insights, and early

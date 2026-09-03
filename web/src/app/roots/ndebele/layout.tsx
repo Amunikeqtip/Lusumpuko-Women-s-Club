@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Ndebele Heritage — Lusumpuko Women's Club",
+  title: "Ndebele Heritage — Lusumbuko Women's Club",
   description:
-    "Discover the Ndebele heritage and its influence on flavor, fermentation, and wild herbs in the Pala at Lusumpuko Women's Club.",
+    "Discover the Ndebele heritage and its influence on flavor, fermentation, and wild herbs in the Pala at Lusumbuko Women's Club.",
 };
 
 export default function NdebeleLayout({

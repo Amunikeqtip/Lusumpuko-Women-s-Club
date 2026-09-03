@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import Image from "next/image";
 import Link from "next/link";
@@ -11,7 +11,7 @@ const ingredients = [
   "250ml Artisan Spring Water (Chilled)",
   "1 tsp Himalayan Pink Salt",
   "2 tbsp Clarified Butter (Ghee)",
-  "1 tbsp Lusumpuko Signature Spice Blend",
+  "1 tbsp Lusumbuko Signature Spice Blend",
   "150g Seasonal Roasted Vegetables",
   "100g Shredded Slow-Cooked Beef",
   "1 cup Fresh Herb Garnish",

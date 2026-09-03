@@ -1,10 +1,10 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { SiteFooter } from "../../components/site-footer";
 import { SiteHeader } from "../../components/site-header";
 import { LWC } from "../../lib/lusumpuko-images";
 
 const contactItems = [
-  ["Call Us", "+263 77677288", "◔"],
+  ["Call Us", "+263 772898470", "◔"],
   ["Email", "info@lusumpuko.com", "✉"],
   ["Our Hours", "10:00 AM - 9:00 PM", "◷"],
   ["Location", "Victoria Falls,\nZimbabwe", "⌖"],
@@ -106,7 +106,7 @@ export default function ContactPage() {
               Find Us in Victoria Falls
             </h2>
             <p className="mt-4 text-sm leading-7 text-[#6f6056]">
-              Lusumpuko Women&apos;s Club
+              Lusumbuko Women&apos;s Club
               <br />
               Victoria Falls, Zimbabwe
             </p>

@@ -1,9 +1,9 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Impact — Lusumpuko Women's Club",
+  title: "Our Impact — Lusumbuko Women's Club",
   description:
-    "Discover how Lusumpuko Women's Club and your support give back to the community and empower women in Victoria Falls.",
+    "Discover how Lusumbuko Women's Club and your support give back to the community and empower women in Victoria Falls.",
 };
 
 export default function ImpactLayout({
